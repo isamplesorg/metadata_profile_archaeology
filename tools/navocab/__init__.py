@@ -22,9 +22,10 @@ NS = {
     "obo": "http://purl.obolibrary.org/obo/",
     "geosciml": "http://resource.geosciml.org/classifier/cgi/lithology",
 }
+def getLogger():
+    return logging.getLogger("navocab")
 
-
-L = logging.getLogger("navocab")
+L = getLogger()
 
 def skosT(term):
     return rdflib.URIRef(f"{NS['skos']}{term}")
@@ -71,8 +72,8 @@ PREFIX rdfs: <{NS['rdfs']}>
         self,
         storage_uri=DEFAULT_STORE,
         store_identifier=STORE_IDENTIFIER,
-#        purge_existing=False,
-        purge_existing=True  # change to true to get rid of previous loads
+        purge_existing=False,
+#        purge_existing=True  # change to true to get rid of previous loads
         ):
         self.origin = None
         self.storage_uri = storage_uri
@@ -94,10 +95,10 @@ PREFIX rdfs: <{NS['rdfs']}>
 
     def _initialize_store(self, purge=False):
         """Sets up the rdf store using an Sqlite cache."""
+#        L = getLogger()
         L.debug("initialize SQLAlchemy datastore. purge:%s",purge)
         graph = rdflib.ConjunctiveGraph("SQLAlchemy", identifier=self.store_identifier)
-        
-        
+
         if purge:
             L.debug("navocab init: purging %s", self.store_identifier)
             graph.destroy(self.storage_uri)
@@ -136,29 +137,39 @@ PREFIX rdfs: <{NS['rdfs']}>
     def load(
         self,
         source: str,
+        voc_uri: str,
         format: str = DEFAULT_FORMAT,
         bindings: typing.Optional[dict] = None,
     ):
         g_loaded = self._g.parse(source, format=format)
+#        L = getLogger()
         L.info("Navocab.load.source: %s", source)
+
+        test = self._g.namespace_manager.namespaces()
+        for prefix, ns_url in test:
+            print(f"{prefix}: {ns_url}")
+            self._g.bind(prefix, ns_url)
 
         if bindings is not None:
             for k, v in bindings.items():
+                L.debug("binding item k: %", k)
+                L.debug("binding item v: %", v)
                 self._g.bind(k, v)
         # Figure the broader concept vocabularies.
         # First check for extension_vocab rdfs:subPropertyOf extended_vocab
         # if not present, then compute and add it for later use.
         # What vocabulary did we just load?
-        L.debug("bindings: %s", bindings.items())
-        q = (
-            VocabularyStore._PFX
-            + """SELECT ?s
-        WHERE {
-            ?s rdf:type skos:ConceptScheme .
-        }"""
-        )
-        qres = g_loaded.query(q)
-        loaded_vocabulary = self._result_single_value(qres, abbreviate=False)
+        
+#        q = (
+ #           VocabularyStore._PFX
+#            + """SELECT ?s
+#        WHERE {
+#            ?s rdf:type skos:ConceptScheme .
+#        }"""
+ #       )
+        # this query will return multiple values if more than one vocab has been loaded
+#        qres = g_loaded.query(q)
+        loaded_vocabulary = voc_uri
         if loaded_vocabulary is not None:
             L.info("Loaded vocabulary %s", loaded_vocabulary)
             q = (
@@ -182,9 +193,10 @@ PREFIX rdfs: <{NS['rdfs']}>
             WHERE {
                 ?child rdf:type skos:Concept .
                 ?child skos:broader ?s .
+                ?child skos:inScheme ?voc .
             }"""
             )
-            qres = g_loaded.query(q)
+            qres = g_loaded.query(q,initBindings={"voc": loaded_vocabulary} )
             broader_concepts = self._one_res(qres)
             vocabs = set()
             for c in broader_concepts:
@@ -228,9 +240,11 @@ PREFIX rdfs: <{NS['rdfs']}>
         return res
 
     def _result_single_value(self, rows, abbreviate=False) -> typing.Any:
+#        L = getLogger()
         L.debug(f"result_single_value-count rows in query result: {len(rows)}")
         for r in rows:
             L.debug(f"VocabularyStore-result single value row: {self.compact_name(r[0])}")
+        for r in rows:
             if abbreviate:
                 return self.compact_name(r[0])
             return r[0]

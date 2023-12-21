@@ -12,7 +12,7 @@ inputs:
   action:  
     description: 'Which action to run -- defaults to uijson'
     required: true
-    default: 'uijson'
+    default: 'docs'
   path: 
     description: 'Path to the output directory for script output'
     required: true
