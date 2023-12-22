@@ -294,7 +294,7 @@ def describeNarrowerTerms(g, v, r, depth=0, level=[]):
 
 def describeVocabulary(store, V):
     G = store._g
-    es = []
+    res = []
     level = [1, ]
     L = getLogger()
     L.debug(f"vocab2md: {G} graph input")
@@ -412,7 +412,7 @@ def main(source, vocabulary):
     res = []
 
     vocabulary = store.expand_name(vocabulary)
-    L.debug(f"main: call desribeVocabulary for: {vocabulary}")
+    L.debug(f"main: call describeVocabulary for: {vocabulary}")
     theMarkdown = describeVocabulary(store, vocabulary)
     res.append(theMarkdown)
     # send the result to stdout via print.

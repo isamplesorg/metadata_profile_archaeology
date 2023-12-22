@@ -147,7 +147,7 @@ PREFIX rdfs: <{NS['rdfs']}>
 
         test = self._g.namespace_manager.namespaces()
         for prefix, ns_url in test:
-            L.debug(f"{prefix}: {ns_url}")
+#            L.debug(f"{prefix}: {ns_url}")
             self._g.bind(prefix, ns_url)
 
 #  SMR-- I don't think this bit does anything.
