@@ -150,8 +150,9 @@ def getNarrower(g, v, r):
 def getObjects(g, s, p):
     L = getLogger()
     test = g.namespace_manager.namespaces()
-    for prefix, ns_url in test:
-        L.debug(f"vocab2md/getObjects: {prefix}: {ns_url}")
+#    for prefix, ns_url in test:
+#        L.debug(f"vocab2md/getObjects: {prefix}: {ns_url}")
+    L.debug(f"expand name s {g.expand_name(s)}")
     q = rdflib.plugins.sparql.prepareQuery(PFX + """SELECT ?o WHERE {?subject ?predicate ?o .}""")
 #    q = rdflib.plugins.sparql.prepareQuery("SELECT ?o WHERE {?subject ?predicate ?o .}", initNs=test)
 #    L.debug(f"getObject prefixes: {PFX}\n")
