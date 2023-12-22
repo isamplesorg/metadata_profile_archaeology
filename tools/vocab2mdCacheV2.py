@@ -156,8 +156,8 @@ def getObjects(g, s, p):
     # WHERE {
     #     ?subject ?predicate ?o .
     # }""")
-     q = rdflib.plugins.sparql.prepareQuery("SELECT ?o WHERE {?subject ?predicate ?o .}", initns=test)
-    L.debug(f"getObject prefixes: {PFX}\n")
+    q = rdflib.plugins.sparql.prepareQuery("SELECT ?o WHERE {?subject ?predicate ?o .}", initns=test)
+#    L.debug(f"getObject prefixes: {PFX}\n")
     L.debug(f"getObject subject: {s}\n")
     L.debug(f"getObject predicate: {p}\n")
     qres = g.query(q, initBindings={'subject': s, 'predicate': p})
