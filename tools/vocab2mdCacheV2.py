@@ -152,10 +152,11 @@ def getObjects(g, s, p):
     test = g.namespace_manager.namespaces()
     for prefix, ns_url in test:
         L.debug(f"vocab2md/getObjects: {prefix}: {ns_url}")
-    q = rdflib.plugins.sparql.prepareQuery(PFX + """SELECT ?o
-    WHERE {
-        ?subject ?predicate ?o .
-    }""")
+    # q = rdflib.plugins.sparql.prepareQuery(PFX + """SELECT ?o
+    # WHERE {
+    #     ?subject ?predicate ?o .
+    # }""")
+     q = rdflib.plugins.sparql.prepareQuery("SELECT ?o WHERE {?subject ?predicate ?o .}", initns=test)
     L.debug(f"getObject prefixes: {PFX}\n")
     L.debug(f"getObject subject: {s}\n")
     L.debug(f"getObject predicate: {p}\n")
