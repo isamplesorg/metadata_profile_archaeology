@@ -147,14 +147,15 @@ PREFIX rdfs: <{NS['rdfs']}>
 
         test = self._g.namespace_manager.namespaces()
         for prefix, ns_url in test:
-            print(f"{prefix}: {ns_url}")
+            L.debug(f"{prefix}: {ns_url}")
             self._g.bind(prefix, ns_url)
 
-        if bindings is not None:
-            for k, v in bindings.items():
-                L.debug("binding item k: %", k)
-                L.debug("binding item v: %", v)
-                self._g.bind(k, v)
+#  SMR-- I don't think this bit does anything.
+        # if bindings is not None:
+        #     for k, v in bindings.items():
+        #         L.debug("binding item k: %", k)
+        #         L.debug("binding item v: %", v)
+        #         self._g.bind(k, v)
         # Figure the broader concept vocabularies.
         # First check for extension_vocab rdfs:subPropertyOf extended_vocab
         # if not present, then compute and add it for later use.
