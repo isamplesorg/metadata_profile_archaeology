@@ -92,6 +92,10 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX ocmat: <https://w3id.org/isample/vocabulary/opencontext/material/0.1/>
+PREFIX ocspec: <https://w3id.org/isample/vocabulary/opencontext/specimentype/0.1/>
+PREFIX spec: <https://w3id.org/isample/vocabulary/specimentype/1.0/>
+PREFIX mat: <https://w3id.org/isample/vocabulary/material/1.0/>
 """
 
 INDENT = "  "
@@ -147,13 +151,11 @@ def getNarrower(g, v, r):
         res.append(row[0])
     return res
 
-def getObjects(store, s, p):
-    g = store._g
+def getObjects(g, s, p):
     L = getLogger()
 #    test = g.namespace_manager.namespaces()
 #    for prefix, ns_url in test:
 #        L.debug(f"vocab2md/getObjects: {prefix}: {ns_url}")
-    L.debug(f"expand name s {store.expand_name(s)}")
     q = rdflib.plugins.sparql.prepareQuery(PFX + """SELECT ?o WHERE {?subject ?predicate ?o .}""")
 #    q = rdflib.plugins.sparql.prepareQuery("SELECT ?o WHERE {?subject ?predicate ?o .}", initNs=test)
 #    L.debug(f"getObject prefixes: {PFX}\n")
@@ -292,12 +294,11 @@ def describeNarrowerTerms(g, v, r, depth=0, level=[]):
     return res
 
 
-def describeVocabulary(store, V):
-    G = store._g
+def describeVocabulary(G, V):
     res = []
     level = [1, ]
     L = getLogger()
-    L.debug(f"vocab2md: {G} graph input")
+    L.debug(f"vocab2md.describeVocabulary: {G} graph input")
 
     # this is the header for Quarto in the markdown output
     res.append("---")
@@ -317,7 +318,7 @@ def describeVocabulary(store, V):
     # end of Quarto qmd header
 
     res.append("")
-    gobj = getObjects(store, V, skosT("prefLabel"))
+    gobj = getObjects(G, V, skosT("prefLabel"))
     if len(gobj)>0:
         scheme = gobj[0]
     else:
@@ -413,7 +414,7 @@ def main(source, vocabulary):
 
     vocabulary = store.expand_name(vocabulary)
     L.debug(f"main: call describeVocabulary for: {vocabulary}")
-    theMarkdown = describeVocabulary(store, vocabulary)
+    theMarkdown = describeVocabulary(store._g, vocabulary)
     res.append(theMarkdown)
     # send the result to stdout via print.
     for doc in res:
