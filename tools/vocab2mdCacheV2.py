@@ -149,7 +149,7 @@ def getNarrower(g, v, r):
 
 def getObjects(g, s, p):
     L = getLogger()
-    test = self.g.namespace_manager.namespaces()
+    test = g.namespace_manager.namespaces()
     for prefix, ns_url in test:
         L.debug(f"vocab2md/getObjects: {prefix}: {ns_url}")
     q = rdflib.plugins.sparql.prepareQuery(PFX + """SELECT ?o
