@@ -147,12 +147,13 @@ def getNarrower(g, v, r):
         res.append(row[0])
     return res
 
-def getObjects(g, s, p):
+def getObjects(store, s, p):
+    g = store._g
     L = getLogger()
-    test = g.namespace_manager.namespaces()
+#    test = g.namespace_manager.namespaces()
 #    for prefix, ns_url in test:
 #        L.debug(f"vocab2md/getObjects: {prefix}: {ns_url}")
-    L.debug(f"expand name s {g.expand_name(s)}")
+    L.debug(f"expand name s {store.expand_name(s)}")
     q = rdflib.plugins.sparql.prepareQuery(PFX + """SELECT ?o WHERE {?subject ?predicate ?o .}""")
 #    q = rdflib.plugins.sparql.prepareQuery("SELECT ?o WHERE {?subject ?predicate ?o .}", initNs=test)
 #    L.debug(f"getObject prefixes: {PFX}\n")
@@ -291,8 +292,9 @@ def describeNarrowerTerms(g, v, r, depth=0, level=[]):
     return res
 
 
-def describeVocabulary(G, V):
-    res = []
+def describeVocabulary(store, V):
+    G = store._g
+    es = []
     level = [1, ]
     L = getLogger()
     L.debug(f"vocab2md: {G} graph input")
@@ -315,7 +317,7 @@ def describeVocabulary(G, V):
     # end of Quarto qmd header
 
     res.append("")
-    gobj = getObjects(G, V, skosT("prefLabel"))
+    gobj = getObjects(store, V, skosT("prefLabel"))
     if len(gobj)>0:
         scheme = gobj[0]
     else:
@@ -411,7 +413,7 @@ def main(source, vocabulary):
 
     vocabulary = store.expand_name(vocabulary)
     L.debug(f"main: call desribeVocabulary for: {vocabulary}")
-    theMarkdown = describeVocabulary(store._g, vocabulary)
+    theMarkdown = describeVocabulary(store, vocabulary)
     res.append(theMarkdown)
     # send the result to stdout via print.
     for doc in res:
