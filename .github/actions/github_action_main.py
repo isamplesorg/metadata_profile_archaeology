@@ -74,7 +74,7 @@ def main():
     L = getLogger()
 
     command = os.environ["INPUT_ACTION"]
-    L.debug("github_action_main: INPUT_ACTION: ", command)
+    L.debug(f"github_action_main: INPUT_ACTION: {command})
     path = os.environ["INPUT_PATH"]
     path = os.path.join(path, "docs")
     input = os.environ["INPUT_INPUTTTL"]
