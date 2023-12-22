@@ -3,7 +3,6 @@
 # imports: https://w3id.org/isample/vocabulary/material/0.9/materialsvocabulary
 # prefix: ocmat
 
-@prefix : <https://w3id.org/isample/vocabulary/opencontext/material/0.1/> .
 @prefix mat: <https://w3id.org/isample/vocabulary/material/0.9/> .
 @prefix ocmat: <https://w3id.org/isample/vocabulary/opencontext/material/0.1/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
