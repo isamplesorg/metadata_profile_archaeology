@@ -44,7 +44,7 @@ jobs:
           #    used for output files with the appropriate extension.
           inputttl: opencontext_material_extension|opencontext_materialsampletype
           # these are the URIs for the ConceptScheme; there must be a conceptScheme defined in each vocabulary.
-          inputvocaburi: ocmat:oc_materialsvocab|osspec:oc_spectype
+          inputvocaburi: ocmat:oc_materialsvocab|ocspec:oc_spectype
 
       - name: Deploy docs
         uses: JamesIves/github-pages-deploy-action@v4

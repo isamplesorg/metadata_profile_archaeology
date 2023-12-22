@@ -92,10 +92,6 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX ocmat: <https://w3id.org/isample/vocabulary/opencontext/material/0.1/>
-PREFIX ocspec: <https://w3id.org/isample/vocabulary/opencontext/specimentype/0.1/>
-PREFIX spec: <https://w3id.org/isample/vocabulary/specimentype/1.0/>
-PREFIX mat: <https://w3id.org/isample/vocabulary/material/1.0/>
 """
 
 INDENT = "  "
@@ -158,7 +154,7 @@ def getObjects(g, s, p):
 #        L.debug(f"vocab2md/getObjects: {prefix}: {ns_url}")
     q = rdflib.plugins.sparql.prepareQuery(PFX + """SELECT ?o WHERE {?subject ?predicate ?o .}""")
 #    q = rdflib.plugins.sparql.prepareQuery("SELECT ?o WHERE {?subject ?predicate ?o .}", initNs=test)
-#    L.debug(f"getObject prefixes: {PFX}\n")
+    L.debug(f"getObject prefixes: {PFX}\n")
     L.debug(f"getObject subject: {s}\n")
     L.debug(f"getObject predicate: {p}\n")
     qres = g.query(q, initBindings={'subject': s, 'predicate': p})
@@ -412,6 +408,11 @@ def main(source, vocabulary):
     store = navocab.VocabularyStore(storage_uri=source)
     res = []
 
+    L.debug(f"vocab2md source: {source}")
+    L.debug(f"vocab2md vocabulary: {vocabulary}")
+
+    test = store._g.namespace_manager.expand_curie(vocabulary)
+    L.debug(f"Test: {test}")                                         
     vocabulary = store.expand_name(vocabulary)
     L.debug(f"main: call describeVocabulary for: {vocabulary}")
     theMarkdown = describeVocabulary(store._g, vocabulary)

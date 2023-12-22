@@ -74,7 +74,7 @@ def main():
     L = getLogger()
 
     command = os.environ["INPUT_ACTION"]
-    L.debug(f"github_action_main: INPUT_ACTION: {command})
+    L.debug(f"github_action_main: INPUT_ACTION: {command}")
     path = os.environ["INPUT_PATH"]
     path = os.path.join(path, "docs")
     input = os.environ["INPUT_INPUTTTL"]
@@ -98,7 +98,7 @@ def main():
     sourcevocabdir = "vocabulary"
 
 
-    L.debug("github_action_main: target path for output: ", path)
+    L.debug(f"github_action_main: target path for output: {path}")
     if path is None:
         L.debug("Did not receive a valid path argument so we cannot run.")
         sys.exit(-1)
@@ -109,9 +109,10 @@ def main():
         L.debug(f"Created {path} since it didn't exist.")
 
     # do function of original Makefile here
-  
+
+
+    theindex = 0
     for inputf in inputttl:
-        theindex=0
         result=load_cachedb(sourcevocabdir + "/" + inputf + ".ttl", cachepath, inputvocaburi[theindex] )
         if (result == 0):
            L.debug(f"load_cachedb call successful for: {inputf}, {inputvocaburi[theindex]}")
@@ -173,7 +174,7 @@ def _quarto_render_html(markdown_in:str, output_path:str):
 
 def _run_make_in_container(target: str):
     L = getLogger()
-    L.debug("In githubActionMain: make in container, target: ", target)
+    L.debug(f"In githubActionMain: make in container, target: {target}")
     subprocess.run(["/usr/bin/make", "-C", "/app", "-f", "/app/Makefile", target])
 
 
@@ -209,7 +210,7 @@ def _run_python_in_container(path_to_python_script: str, args: list[str], f):
         result = subprocess.run(subprocess_args)
     else:
         result = subprocess.run(subprocess_args, stdout=f)
-#    L.debug("container call result ", result.returncode)
+#    L.debug(f"container call result {result.returncode}")
     return result.returncode
 
 
