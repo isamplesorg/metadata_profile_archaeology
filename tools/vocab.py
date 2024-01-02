@@ -117,7 +117,7 @@ def load(ctx, inputf, voc_uri):
 #    if inputf =="known":
 #        uris = CURRENT_ISAMPLES_VOCABULARIES
 #    for aninputf in uris:
-    L.info("Loading URI: %s", inputf)
+    L.info("Loading file: %s", inputf)
     _s.load(inputf,voc_uri)
     L.info("Graph now has %s statements.", len(_s._g))
     test = _s._g.namespace_manager.expand_curie(voc_uri)

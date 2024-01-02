@@ -149,10 +149,10 @@ def load_cachedb(inputf, cachepath, voc_uri):
     load_args = ["--verbosity","DEBUG", "-s", cachepath, "load", inputf, voc_uri]
     result = _run_python_in_container("/app/tools/vocab.py", load_args, f="")
     if (result == 0):
-        L.debug(f"vocab.py.load call successful for {inputf}")
+        L.debug(f"vocab.py.load_cachedb call successful for file: {inputf}")
         return 0
     else:
-        L.debug(f"vocab.py.load had problem processing {inputf}")
+        L.debug(f"vocab.py.load_cachedb had problem processing file: {inputf}")
         return 1
     
 
