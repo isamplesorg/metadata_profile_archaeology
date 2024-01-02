@@ -305,18 +305,11 @@ ocmat:pewter
 .
 ocmat:plantfiber
   rdf:type skos:Concept ;
-  rdfs:label "Plant fiber"@en ;
-  skos:broader ocmat:plantmaterial ;
-  skos:example "cotton, linen, yucca fiber" ;
+  rdfs:label "plant fiber"@en ;
+  skos:broader ocmat:organicplantmaterial ;
+  skos:example "cotton, linen, yucca fiber"@en ;
   skos:inScheme ocmat:oc_materialsvocab ;
-  skos:prefLabel "Plant fiber"@en ;
-.
-ocmat:plantmaterial
-  rdf:type skos:Concept ;
-  rdfs:label "plant material"@en ;
-  skos:broader mat:organicmaterial ;
-  skos:inScheme ocmat:oc_materialsvocab ;
-  skos:prefLabel "plant material"@en ;
+  skos:prefLabel "plant fiber"@en ;
 .
 ocmat:plaster
   rdf:type skos:Concept ;
@@ -421,11 +414,10 @@ ocmat:travertine
 .
 ocmat:wood
   rdf:type skos:Concept ;
-  rdfs:label "Wood"@en ;
+  rdfs:label "wood"@en ;
   skos:broader ocmat:organicplantmaterial ;
-  skos:broader ocmat:plantmaterial ;
   skos:inScheme ocmat:oc_materialsvocab ;
-  skos:prefLabel "Wood"@en ;
+  skos:prefLabel "wood"@en ;
 .
 mat:anthropogenicmetal
   skos:topConceptOf ocmat:oc_materialsvocab ;
