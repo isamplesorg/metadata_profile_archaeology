@@ -404,15 +404,25 @@ def main(source, vocabulary):
     logging.config.dictConfig(logging_config)
     L = getLogger()
 
+    # this process expects that the triples for a SKOS vocabulary
+    #  have been loaded in an SQLalchemy SQLlite database. The vocab.py
+    #  code in this repository does the loading and should be run beforhand
+    # NOTE that Github seems to cache stuff that goes in the vocabularies.db
+    #  so if any namespace bindings change between runs, the old bindings
+    #  are apparently cached somewhere and break things. Delete the vocabularies.db
+    #  to (hopefully) avoid this problem.
     source = f"sqlite:///{source}"
     store = navocab.VocabularyStore(storage_uri=source)
     res = []
 
     L.debug(f"vocab2md source: {source}")
     L.debug(f"vocab2md vocabulary: {vocabulary}")
-
-    test = store._g.namespace_manager.expand_curie(vocabulary)
-    L.debug(f"vocabulary expanded curie: {test}")
+    try:
+        test = store._g.namespace_manager.expand_curie(vocabulary)
+        L.debug(f"vocabulary expanded curie: {test}")
+    except Exception as error:
+        L.debug("vocabulary expanded curie, exception occurred:", error)
+    
     vocabulary = store.expand_name(vocabulary)
     L.debug(f"main: call describeVocabulary for: {vocabulary}")
     theMarkdown = describeVocabulary(store._g, vocabulary)
