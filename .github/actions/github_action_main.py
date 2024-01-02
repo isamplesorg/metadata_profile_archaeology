@@ -130,7 +130,7 @@ def main():
     elif command == "docs":
         L.debug("Generating markdown and html docs")
         index = 0
-        L.debug(f"input markdown file: {inputttl[index]}, vocab uri: {inputvocaburi[index]}")
+        L.debug(f"input file name: {inputttl[index]}, vocab uri: {inputvocaburi[index]}")
         while index < len(inputttl):
             result = _run_docs_in_container(os.path.join(path, inputttl[index]+".md"), inputvocaburi[index])
             if result == 0:

@@ -13,7 +13,7 @@ and change formatting
 This code reads a skos vocabulary file from a sqlAlchemy database
 located at ../cache/vocabularies. Vocabularies are represented using SKOS
 RDF vocabulary and Turtle serialization. Vocabularies are identified with
-the  URI of the skos:ConceptScheme. The vocabualary representation is transformed
+the  URI of the skos:ConceptScheme. The vocabulary representation is transformed
 from SKOS/rdf/turtle to stdout as a text Markdown file using Quarto conventions.
 The markdown uses some special syntax that is interpreted by 
 Quarto for better html rendering
@@ -412,7 +412,7 @@ def main(source, vocabulary):
     L.debug(f"vocab2md vocabulary: {vocabulary}")
 
     test = store._g.namespace_manager.expand_curie(vocabulary)
-    L.debug(f"Test: {test}")                                         
+    L.debug(f"vocabulary expanded curie: {test}")
     vocabulary = store.expand_name(vocabulary)
     L.debug(f"main: call describeVocabulary for: {vocabulary}")
     theMarkdown = describeVocabulary(store._g, vocabulary)
