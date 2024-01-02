@@ -131,8 +131,10 @@ ocspec:weapon
   skos:prefLabel "Weapon"@en ;
 .
 spec:artifact
+  skos:prefLabel "Artifact"@en ;
   skos:topConceptOf ocspec:oc_spectypevocab ;
 .
 spec:organismpart
+  skos:prefLabel "Organism part"@en ;
   skos:topConceptOf ocspec:oc_spectypevocab ;
 .

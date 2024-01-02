@@ -420,12 +420,15 @@ ocmat:wood
   skos:prefLabel "wood"@en ;
 .
 mat:anthropogenicmetal
+  skos:prefLabel "anthropogenic metal"@en ;
   skos:topConceptOf ocmat:oc_materialsvocab ;
 .
 mat:biogenicnonorganicmaterial
+  skos:prefLabel "biogenic non-organic material"@en ;
   skos:topConceptOf ocmat:oc_materialsvocab ;
 .
 mat:mineral
+  skos:prefLabel "mineral"@en ;
   skos:topConceptOf ocmat:oc_materialsvocab ;
 .
 mat:organicmaterial
@@ -433,11 +436,14 @@ mat:organicmaterial
   skos:topConceptOf ocmat:oc_materialsvocab ;
 .
 mat:otheranthropogenicmaterial
+  skos:prefLabel "other anthropogenic material"@en ;
   skos:topConceptOf ocmat:oc_materialsvocab ;
 .
 mat:particulate
+  skos:prefLabel "particulate material"@en ;
   skos:topConceptOf ocmat:oc_materialsvocab ;
 .
 mat:rock
+  skos:prefLabel "rock"@en ;
   skos:topConceptOf ocmat:oc_materialsvocab ;
 .
