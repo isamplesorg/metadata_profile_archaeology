@@ -11,10 +11,11 @@
 
 ocmat:amber
   rdf:type skos:Concept ;
-  rdfs:label "amber" ;
+  rdfs:label "amber"@en ;
   skos:broader mat:biogenicnonorganicmaterial ;
   skos:inScheme ocmat:oc_materialsvocab ;
-  skos:prefLabel "amber" ;
+  skos:prefLabel "amber"@en ;
+  skos:definition "missing"@en ;
 .
 ocmat:anthropogenicorganicmaterial
   rdf:type skos:Concept ;
@@ -31,6 +32,7 @@ ocmat:basalt
   skos:closeMatch <http://resource.geosciml.org/classifier/cgi/lithology/basalt> ;
   skos:inScheme ocmat:oc_materialsvocab ;
   skos:prefLabel "basalt"@en ;
+  skos:definition "missing"@en ;
 .
 ocmat:bone
   rdf:type skos:Concept ;
@@ -38,6 +40,7 @@ ocmat:bone
   skos:broader mat:biogenicnonorganicmaterial ;
   skos:inScheme ocmat:oc_materialsvocab ;
   skos:prefLabel "bone"@en ;
+  skos:definition "missing"@en ;
 .
 ocmat:brass
   rdf:type skos:Concept ;
@@ -85,6 +88,7 @@ ocmat:charcoal
   skos:broader mat:biogenicnonorganicmaterial ;
   skos:inScheme ocmat:oc_materialsvocab ;
   skos:prefLabel "charcoal"@en ;
+  skos:definition "missing"@en ;
 .
 ocmat:chert
   rdf:type skos:Concept ;
@@ -93,24 +97,27 @@ ocmat:chert
   skos:closeMatch <https://www.mindat.org/1:1:994:6> ;
   skos:inScheme ocmat:oc_materialsvocab ;
   skos:prefLabel "chert"@en ;
+  skos:definition "missing"@en ;
 .
 ocmat:cinder
   rdf:type skos:Concept ;
   rdfs:label "cinder"@en ;
   skos:broader mat:particulate ;
   skos:broader mat:rock ;
-  skos:definition "The incombustible residue of something burnt. (http://vocab.getty.edu/page/aat/300011788) @en" ;
+  skos:definition "The incombustible residue of something burnt. (http://vocab.getty.edu/page/aat/300011788)"@en ;
   skos:exactMatch <https://vocab.getty.edu/aat/300011788> ;
   skos:inScheme ocmat:oc_materialsvocab ;
   skos:prefLabel "cinder"@en ;
+  skos:definition "missing"@en ;
 .
 ocmat:coal
   rdf:type skos:Concept ;
-  rdfs:label "Coal"@en ;
+  rdfs:label "coal"@en ;
   skos:broader mat:biogenicnonorganicmaterial ;
   skos:broader mat:rock ;
   skos:inScheme ocmat:oc_materialsvocab ;
   skos:prefLabel "coal"@en ;
+  skos:definition "missing"@en ;
 .
 ocmat:copper
   rdf:type skos:Concept ;
@@ -127,6 +134,7 @@ ocmat:dolomite
   skos:broader mat:rock ;
   skos:inScheme ocmat:oc_materialsvocab ;
   skos:prefLabel "dolomite"@en ;
+  skos:definition "missing"@en ;
 .
 ocmat:faience
   rdf:type skos:Concept ;
@@ -153,6 +161,7 @@ ocmat:flint
   skos:closeMatch <https://www.mindat.org/1:1:6676:7> ;
   skos:inScheme ocmat:oc_materialsvocab ;
   skos:prefLabel "flint"@en ;
+  skos:definition "missing"@en ;
 .
 ocmat:gabbro
   rdf:type skos:Concept ;
@@ -160,6 +169,7 @@ ocmat:gabbro
   skos:broader mat:rock ;
   skos:inScheme ocmat:oc_materialsvocab ;
   skos:prefLabel "gabbro"@en ;
+  skos:definition "missing"@en ;
 .
 ocmat:glass
   rdf:type skos:Concept ;
@@ -180,11 +190,12 @@ ocmat:gold
 .
 ocmat:greywacke
   rdf:type skos:Concept ;
-  rdfs:label "greywacke" ;
-  skos:altLabel "graywacke" ;
+  rdfs:label "greywacke"@en ;
+  skos:altLabel "graywacke"@en ;
   skos:broader mat:rock ;
   skos:inScheme ocmat:oc_materialsvocab ;
-  skos:prefLabel "greywacke" ;
+  skos:prefLabel "greywacke"@en ;
+  skos:definition "missing"@en ;
 .
 ocmat:hair
   rdf:type skos:Concept ;
@@ -202,6 +213,7 @@ ocmat:hematite
   skos:exactMatch <https://www.mindat.org/1:1:1856:8> ;
   skos:inScheme ocmat:oc_materialsvocab ;
   skos:prefLabel "hematite"@en ;
+  skos:definition "missing"@en ;
 .
 ocmat:iron
   rdf:type skos:Concept ;
@@ -210,6 +222,7 @@ ocmat:iron
   skos:definition "Iron or iron-rich alloy"@en ;
   skos:inScheme ocmat:oc_materialsvocab ;
   skos:prefLabel "iron"@en ;
+  skos:definition "missing"@en ;
 .
 ocmat:kaolin
   rdf:type skos:Concept ;
@@ -217,14 +230,15 @@ ocmat:kaolin
   skos:broader mat:mineral ;
   skos:inScheme ocmat:oc_materialsvocab ;
   skos:prefLabel "kaolin"@en ;
+  skos:definition "missing"@en ;
 .
 ocmat:lead
   rdf:type skos:Concept ;
-  rdfs:label "lead" ;
+  rdfs:label "lead"@en ;
   skos:broader mat:anthropogenicmetal ;
-  skos:definition "lead or lead-rich alloy" ;
+  skos:definition "lead or lead-rich alloy"@en ;
   skos:inScheme ocmat:oc_materialsvocab ;
-  skos:prefLabel "lead" ;
+  skos:prefLabel "lead"@en ;
 .
 ocmat:leather
   rdf:type skos:Concept ;
@@ -237,37 +251,42 @@ ocmat:leather
 .
 ocmat:limestone
   rdf:type skos:Concept ;
-  rdfs:label "Limestone"@en ;
+  rdfs:label "limestone"@en ;
   skos:broader mat:rock ;
   skos:inScheme ocmat:oc_materialsvocab ;
   skos:prefLabel "limestone"@en ;
+  skos:definition "missing"@en ;
 .
 ocmat:marble
   rdf:type skos:Concept ;
-  rdfs:label "marble" ;
+  rdfs:label "marble"@en ;
   skos:broader mat:rock ;
   skos:inScheme ocmat:oc_materialsvocab ;
-  skos:prefLabel "marble" ;
+  skos:prefLabel "marble"@en ;
+  skos:definition "missing"@en ;
 .
 ocmat:mica
   rdf:type skos:Concept ;
-  rdfs:label "mica" ;
+  rdfs:label "mica"@en ;
   skos:broader mat:mineral ;
   skos:inScheme ocmat:oc_materialsvocab ;
-  skos:prefLabel "mica" ;
+  skos:prefLabel "mica"@en ;
+  skos:definition "missing"@en ;
 .
 ocmat:obsidian
   rdf:type skos:Concept ;
-  rdfs:label "obsidian" ;
+  rdfs:label "obsidian"@en ;
   skos:broader mat:rock ;
   skos:inScheme ocmat:oc_materialsvocab ;
-  skos:prefLabel "obsidian" ;
+  skos:prefLabel "obsidian"@en ;
+  skos:definition "missing"@en ;
 .
 ocmat:oc_materialsvocab
   rdf:type owl:Ontology ;
   rdf:type skos:ConceptScheme ;
+  skos:inScheme mat:materialsvocabulary ;
   owl:imports <http://www.w3.org/2004/02/skos/core> ;
-  owl:versionInfo "Created with TopBraid Composer" ;
+  owl:versionInfo "Created with TopBraid Composer"@en ;
   skos:definition "vocabulary of materials typical of archeological samples"@en ;
   skos:prefLabel "OpenContext material type extension draft"@en ;
 .
@@ -285,6 +304,7 @@ ocmat:organicplantmaterial
   skos:broader mat:organicmaterial ;
   skos:inScheme ocmat:oc_materialsvocab ;
   skos:prefLabel "organic plant material"@en ;
+  skos:definition "missing"@en ;
 .
 ocmat:paper
   rdf:type skos:Concept ;
@@ -297,11 +317,11 @@ ocmat:paper
 .
 ocmat:pewter
   rdf:type skos:Concept ;
-  rdfs:label "pewter" ;
+  rdfs:label "pewter"@en ;
   skos:broader mat:anthropogenicmetal ;
-  skos:definition "alloy consisting of mostly tin,  with antimony,  minor copper or bismuth, and sometimes silver." ;
+  skos:definition "alloy consisting of mostly tin,  with antimony,  minor copper or bismuth, and sometimes silver."@en ;
   skos:inScheme ocmat:oc_materialsvocab ;
-  skos:prefLabel "pewter" ;
+  skos:prefLabel "pewter"@en ;
 .
 ocmat:plantfiber
   rdf:type skos:Concept ;
@@ -310,14 +330,9 @@ ocmat:plantfiber
   skos:example "cotton, linen, yucca fiber"@en ;
   skos:inScheme ocmat:oc_materialsvocab ;
   skos:prefLabel "plant fiber"@en ;
+  skos:definition "missing"@en ;
 .
-ocmat:plaster
-  rdf:type skos:Concept ;
-  rdfs:label "plaster"@en ;
-  skos:definition "plaster or mortar"@en ;
-  skos:inScheme ocmat:oc_materialsvocab ;
-  skos:prefLabel "plaster"@en ;
-.
+
 ocmat:plasterormortar
   rdf:type skos:Concept ;
   rdfs:label "plaster or mortar"@en ;
@@ -347,17 +362,19 @@ ocmat:porcelain
 .
 ocmat:pumice
   rdf:type skos:Concept ;
-  rdfs:label "pumice" ;
+  rdfs:label "pumice"@en ;
   skos:broader mat:rock ;
   skos:inScheme ocmat:oc_materialsvocab ;
-  skos:prefLabel "pumice" ;
+  skos:prefLabel "pumice"@en ;
+  skos:definition "missing"@en ;
 .
 ocmat:quartz
   rdf:type skos:Concept ;
-  rdfs:label "quartz" ;
+  rdfs:label "quartz"@en ;
   skos:broader mat:mineral ;
   skos:inScheme ocmat:oc_materialsvocab ;
-  skos:prefLabel "quartz" ;
+  skos:prefLabel "quartz"@en ;
+  skos:definition "missing"@en ;
 .
 ocmat:rubber
   rdf:type skos:Concept ;
@@ -386,6 +403,7 @@ ocmat:slate
   skos:exactMatch <https://www.mindat.org/1:1:48638:5> ;
   skos:inScheme ocmat:oc_materialsvocab ;
   skos:prefLabel "slate"@en ;
+  skos:definition "missing"@en ;
 .
 ocmat:terracotta
   rdf:type skos:Concept ;
@@ -418,32 +436,54 @@ ocmat:wood
   skos:broader ocmat:organicplantmaterial ;
   skos:inScheme ocmat:oc_materialsvocab ;
   skos:prefLabel "wood"@en ;
+  skos:definition "missing"@en ;
 .
 mat:anthropogenicmetal
+  rdf:type skos:Concept ;
+  skos:definition "Specimen is dominantly composed of metal that has been produced or used by humans; subclass of anthropogenic material. Samples of naturally occuring metallic material (e.g. native copper, gold nuggets) should be considered mineral material. Metallic material is material that when polished or fractured, shows a lustrous appearance, and conducts electricity and heat relatively well. Metals are typically malleable (they can be hammered into thin sheets) or ductile (can be drawn into wires). The boundaries between metals, nonmetals, and metalloids fluctuate slightly due to a lack of universally accepted definitions of the categories involved. (https://en.wikipedia.org/wiki/Metal). c.f. http://purl.obolibrary.org/obo/ENVO_01001069"@en ;
+  skos:inScheme mat:materialsvocabulary ;
   skos:prefLabel "anthropogenic metal"@en ;
   skos:topConceptOf ocmat:oc_materialsvocab ;
 .
 mat:biogenicnonorganicmaterial
+  rdf:type skos:Concept ;
+  skos:definition "Material produced by an organism but not composed of 'very large molecules of biological origin.' E.g. bone, tooth, shell, coral skeleton,"@en ;
+  skos:inScheme mat:materialsvocabulary ;
   skos:prefLabel "biogenic non-organic material"@en ;
   skos:topConceptOf ocmat:oc_materialsvocab ;
 .
 mat:mineral
+  rdf:type skos:Concept ;
+  skos:definition "Material consists of a single mineral or mineraloid phase. .  'A mineral is an element or chemical compound that is normally crystalline and that has been formed as a result of geological processes.' (Nickel, Ernest H. (1995), The definition of a mineral, The Canadian Mineralogist. 33 (3): 689–90). Include mineraloids. ... A material primarily composed of some substance that is naturally occurring, solid and stable at room temperature, representable by a chemical formula, usually abiogenic, and that has an ordered atomic structure. (http://purl.obolibrary.org/obo/ENVO_01000256). Comment: the identity of a mineral species is defined by a crystal structure and a chemical composition that might include various specific elemental substitutions in that structure. Mineraloid: A naturally occurring mineral-like substance that does not demonstrate crystallinity. Mineraloids possess chemical compositions that vary beyond the generally accepted ranges for specific minerals. Examples: obsidian, Opal. (https://en.wikipedia.org/wiki/Mineraloid)"@en ;
+  skos:inScheme mat:materialsvocabulary ;
   skos:prefLabel "mineral"@en ;
   skos:topConceptOf ocmat:oc_materialsvocab ;
 .
 mat:organicmaterial
+  rdf:type skos:Concept ;
+  skos:definition "Environmental material derived from living organisms and composed primarily of one or more very large molecules of biological origin. Examples: body (animal or plant), body part, fecal matter, seeds, wood, tissue, biological fluids, biological waste, algal material, biofilm, necromass, plankton. source: http://purl.obolibrary.org/obo/ENVO_01000155"@en ;
+  skos:inScheme mat:materialsvocabulary ;
   skos:prefLabel "organic material"@en ;
   skos:topConceptOf ocmat:oc_materialsvocab ;
 .
 mat:otheranthropogenicmaterial
+  rdf:type skos:Concept ;
+  skos:definition "Non-metallic material produced by human activity. Organic products of agricultural activity are both anthropogenic and organic. Include lab preparations like XRF pellet and rock powders. Examples: ceramics, concrete, slag, (anthropogenic) glass, mine tailing, plaster, waste."@en ;
+  skos:inScheme mat:materialsvocabulary ;
   skos:prefLabel "other anthropogenic material"@en ;
   skos:topConceptOf ocmat:oc_materialsvocab ;
 .
 mat:particulate
+  rdf:type skos:Concept ;
+  skos:definition "Material consists of microscopic particulate material derived by precipitation, filtering, or settling from suspension in a fluid, e.g. filtrate from water, deposition from atmosphere, astro material particles. Might include mineral, organic, or biological material. ENVO definition (ENVO_01000060) has \"composed of microscopic portions of solid or liquid material suspended in another environmental material.\", refine here to define as the solid particles, distinct from a material in which they are suspended. A material that includes solid or liquid particles suspended in another material would be a dispersed_media in this scheme, not defined in ENVO. Human manufactured particulates (e.g. rock powder) should be categorized as 'anthropogenic material' as well as 'Particulate'"@en ;
+  skos:inScheme mat:materialsvocabulary ;
   skos:prefLabel "particulate material"@en ;
   skos:topConceptOf ocmat:oc_materialsvocab ;
 .
 mat:rock
+  rdf:type skos:Concept ;
+  skos:definition "Consolidated aggregate of particles (grains) of rock, mineral (including native elements), mineraloid, or solid organic material. Includes mineral aggregates such as granite, shale, marble; natural glass such as obsidian; organic material formed by geologic processes such a coal;  extraterrestrial material in meteorites; and  crushed rock fragments like drill cuttings from rock.  (based on http://resource.geosciml.org/classifier/cgi/lithology/rock, same as http://purl.obolibrary.org/obo/ENVO_00001995)"@en ;
+  skos:inScheme mat:materialsvocabulary ;
   skos:prefLabel "rock"@en ;
   skos:topConceptOf ocmat:oc_materialsvocab ;
 .
