@@ -61,8 +61,8 @@ ocspec:oc_spectypevocab
   rdf:type owl:Ontology ;
   rdf:type skos:ConceptScheme ;
   dcterms:contributor "Hong Cui, Sarah Hyunju Song" ;
-    skos:inScheme spec:specimentypevocabulary ;
-	skos:definition "categories for categorization of kinds of sample objects specific to archaeological studies"@en ;
+  skos:inScheme spec:specimentypevocabulary ;
+  skos:definition "categories for categorization of kinds of sample objects specific to archaeological studies"@en ;
   dcterms:created "2022-09-30"^^xsd:date ;
   dcterms:creator <https://orcid.org/0000-0001-6041-5302> ;
   dcterms:license <https://creativecommons.org/licenses/by/4.0/legalcode> ;
@@ -70,7 +70,18 @@ ocspec:oc_spectypevocab
   rdfs:label "Open Context vocabulary extension for material sample type"@en ;
   owl:imports <http://www.w3.org/2004/02/skos/core> ;
   skos:prefLabel "Open Context vocabulary extension for material sample type"@en ;
+  schema:funding <AWDID:2004562> ;
+  schema:provider <http://cor.esipfed.org/ont#/> ;
+  schema:codeRepository <https://github.com/isamplesorg/metadata_profile_archaeology/tree/main/vocabulary> ;
 .
+
+<AWDID:2004562>
+  rdf:type schema:Grant ;
+  schema:funder <https://ror.org/04nh1dc89> ;
+  schema:name "Collaborative Research: Frameworks: Internet of Samples: Toward an Interdisciplinary Cyberinfrastructure for Material Samples" ;
+  schema:url "https://nsf.gov/awardsearch/showAward?AWD_ID=2004562" ;
+.
+
 ocspec:ornament
   rdf:type skos:Concept ;
   rdfs:label "Ornament"@en ;

@@ -289,7 +289,18 @@ ocmat:oc_materialsvocab
   owl:versionInfo "Created with TopBraid Composer"@en ;
   skos:definition "vocabulary of materials typical of archeological samples"@en ;
   skos:prefLabel "OpenContext material type extension draft"@en ;
+  schema:funding <AWDID:2004562> ;
+  schema:provider <http://cor.esipfed.org/ont#/> ;
+  schema:codeRepository <https://github.com/isamplesorg/metadata_profile_archaeology/tree/main/vocabulary> ;
 .
+
+<AWDID:2004562>
+  rdf:type schema:Grant ;
+  schema:funder <https://ror.org/04nh1dc89> ;
+  schema:name "Collaborative Research: Frameworks: Internet of Samples: Toward an Interdisciplinary Cyberinfrastructure for Material Samples" ;
+  schema:url "https://nsf.gov/awardsearch/showAward?AWD_ID=2004562" ;
+.
+
 ocmat:organicanimalmaterial
   rdf:type skos:Concept ;
   rdfs:label "organic animal material"@en ;
