@@ -9,7 +9,7 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix spec: <https://w3id.org/isample/vocabulary/specimentype/1.0/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix schema: <https://schema.org/> .
+@prefix schema: <http://schema.org/> .
 
 ocspec:architecturalelement
   rdf:type skos:Concept ;
