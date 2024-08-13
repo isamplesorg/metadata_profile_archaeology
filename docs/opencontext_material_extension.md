@@ -28,7 +28,7 @@ Namespace:
 **History**
 
 
-- [anthropogenicmetal](#anthropogenicmetal)
+- [anthropogenic metal](#anthropogenicmetal)
     - [brass](#brass)
     - [bronze](#bronze)
     - [copper](#copper)
@@ -37,7 +37,7 @@ Namespace:
     - [lead](#lead)
     - [pewter](#pewter)
 
-- [biogenicnonorganicmaterial](#biogenicnonorganicmaterial)
+- [biogenic non-organic material](#biogenicnonorganicmaterial)
     - [amber](#amber)
     - [bone](#bone)
     - [charcoal](#charcoal)
@@ -56,11 +56,12 @@ Namespace:
         - [leather](#leather)
     - [organic plant material](#organicplantmaterial)
         - [Wood](#wood)
+        - [Plant fiber](#plantfiber)
     - [plant material](#plantmaterial)
         - [Plant fiber](#plantfiber)
         - [Wood](#wood)
 
-- [otheranthropogenicmaterial](#otheranthropogenicmaterial)
+- [other anthropogenic material](#otheranthropogenicmaterial)
     - [anthropogenic organic material](#anthropogenicorganicmaterial)
         - [plastic (material)](#plastic)
     - [ceramic clay](#ceramicclay)
@@ -76,7 +77,7 @@ Namespace:
     - [plaster or mortar](#plasterormortar)
     - [rubber](#rubber)
 
-- [particulate](#particulate)
+- [particulate material](#particulate)
     - [cinder](#cinder)
 
 - [rock](#rock)
@@ -99,8 +100,21 @@ Namespace:
 
 []{#anthropogenicmetal}
 
-##  `https://w3id.org/isample/vocabulary/material/1.0/anthropogenicmetal`
+##  anthropogenic metal
 
+
+- Specimen is dominantly composed of metal that has been produced or
+used by humans; subclass of anthropogenic material. Samples of
+naturally occuring metallic material (e.g. native copper, gold
+nuggets) should be considered mineral material. Metallic material is
+material that when polished or fractured, shows a lustrous appearance,
+and conducts electricity and heat relatively well. Metals are
+typically malleable (they can be hammered into thin sheets) or ductile
+(can be drawn into wires). The boundaries between metals, nonmetals,
+and metalloids fluctuate slightly due to a lack of universally
+accepted definitions of the categories involved.
+(https://en.wikipedia.org/wiki/Metal). c.f.
+http://purl.obolibrary.org/obo/ENVO_01001069
 - Concept URI token: anthropogenicmetal
 
 
@@ -166,17 +180,20 @@ degrees Celsius and a boiling point of 2,807 degrees Celsius.
  [`anthropogenicmetal`](#anthropogenicmetal)
 
 - Iron or iron-rich alloy
+- missing
 - Concept URI token: iron
 
 
 []{#lead}
 
 ###  lead
+* `lead`
 
 
 - Child of:
  [`anthropogenicmetal`](#anthropogenicmetal)
 
+- lead or lead-rich alloy
 - lead or lead-rich alloy
 - Concept URI token: lead
 
@@ -184,11 +201,14 @@ degrees Celsius and a boiling point of 2,807 degrees Celsius.
 []{#pewter}
 
 ###  pewter
+* `pewter`
 
 
 - Child of:
  [`anthropogenicmetal`](#anthropogenicmetal)
 
+- alloy consisting of mostly tin,  with antimony,  minor copper or
+bismuth, and sometimes silver.
 - alloy consisting of mostly tin,  with antimony,  minor copper or
 bismuth, and sometimes silver.
 - Concept URI token: pewter
@@ -197,19 +217,25 @@ bismuth, and sometimes silver.
 
 []{#biogenicnonorganicmaterial}
 
-##  `https://w3id.org/isample/vocabulary/material/1.0/biogenicnonorganicmaterial`
+##  biogenic non-organic material
 
+
+- Material produced by an organism but not composed of 'very large
+molecules of biological origin.' E.g. bone, tooth, shell, coral
+skeleton,
 - Concept URI token: biogenicnonorganicmaterial
 
 
 []{#amber}
 
 ###  amber
+* `amber`
 
 
 - Child of:
  [`biogenicnonorganicmaterial`](#biogenicnonorganicmaterial)
 
+- missing
 - Concept URI token: amber
 
 
@@ -221,6 +247,7 @@ bismuth, and sometimes silver.
 - Child of:
  [`biogenicnonorganicmaterial`](#biogenicnonorganicmaterial)
 
+- missing
 - Concept URI token: bone
 
 
@@ -232,6 +259,7 @@ bismuth, and sometimes silver.
 - Child of:
  [`biogenicnonorganicmaterial`](#biogenicnonorganicmaterial)
 
+- missing
 - Concept URI token: charcoal
 
 
@@ -244,6 +272,7 @@ bismuth, and sometimes silver.
  [`biogenicnonorganicmaterial`](#biogenicnonorganicmaterial)
  [`rock`](#rock)
 
+- missing
 - Concept URI token: coal
 
 
@@ -264,8 +293,25 @@ calcareous or chitinous material
 
 []{#mineral}
 
-##  `https://w3id.org/isample/vocabulary/material/1.0/mineral`
+##  mineral
 
+
+- Material consists of a single mineral or mineraloid phase. .  'A
+mineral is an element or chemical compound that is normally
+crystalline and that has been formed as a result of geological
+processes.' (Nickel, Ernest H. (1995), The definition of a mineral,
+The Canadian Mineralogist. 33 (3): 689–90). Include mineraloids. ... A
+material primarily composed of some substance that is naturally
+occurring, solid and stable at room temperature, representable by a
+chemical formula, usually abiogenic, and that has an ordered atomic
+structure. (http://purl.obolibrary.org/obo/ENVO_01000256). Comment:
+the identity of a mineral species is defined by a crystal structure
+and a chemical composition that might include various specific
+elemental substitutions in that structure. Mineraloid: A naturally
+occurring mineral-like substance that does not demonstrate
+crystallinity. Mineraloids possess chemical compositions that vary
+beyond the generally accepted ranges for specific minerals. Examples:
+obsidian, Opal. (https://en.wikipedia.org/wiki/Mineraloid)
 - Concept URI token: mineral
 
 
@@ -277,6 +323,7 @@ calcareous or chitinous material
 - Child of:
  [`mineral`](#mineral)
 
+- missing
 - Concept URI token: hematite
 
 
@@ -288,28 +335,33 @@ calcareous or chitinous material
 - Child of:
  [`mineral`](#mineral)
 
+- missing
 - Concept URI token: kaolin
 
 
 []{#mica}
 
 ###  mica
+* `mica`
 
 
 - Child of:
  [`mineral`](#mineral)
 
+- missing
 - Concept URI token: mica
 
 
 []{#quartz}
 
 ###  quartz
+* `quartz`
 
 
 - Child of:
  [`mineral`](#mineral)
 
+- missing
 - Concept URI token: quartz
 
 
@@ -319,6 +371,12 @@ calcareous or chitinous material
 ##  organic material
 
 
+- Environmental material derived from living organisms and composed
+primarily of one or more very large molecules of biological origin.
+Examples: body (animal or plant), body part, fecal matter, seeds,
+wood, tissue, biological fluids, biological waste, algal material,
+biofilm, necromass, plankton. source:
+http://purl.obolibrary.org/obo/ENVO_01000155
 - Concept URI token: organicmaterial
 
 
@@ -382,19 +440,36 @@ resistant to putrefication and relatively soft and flexible when dry.
 - Child of:
  [`organicmaterial`](#organicmaterial)
 
+- missing
 - Concept URI token: organicplantmaterial
 
 
 []{#wood}
 
 ####  Wood
+* `wood`
 
 
 - Child of:
  [`organicplantmaterial`](#organicplantmaterial)
  [`plantmaterial`](#plantmaterial)
 
+- missing
 - Concept URI token: wood
+
+
+[]{#plantfiber}
+
+####  Plant fiber
+* `plant fiber`
+
+
+- Child of:
+ [`plantmaterial`](#plantmaterial)
+ [`organicplantmaterial`](#organicplantmaterial)
+
+- missing
+- Concept URI token: plantfiber
 
 
 []{#plantmaterial}
@@ -411,31 +486,41 @@ resistant to putrefication and relatively soft and flexible when dry.
 []{#plantfiber}
 
 ####  Plant fiber
+* `plant fiber`
 
 
 - Child of:
  [`plantmaterial`](#plantmaterial)
+ [`organicplantmaterial`](#organicplantmaterial)
 
+- missing
 - Concept URI token: plantfiber
 
 
 []{#wood}
 
 ####  Wood
+* `wood`
 
 
 - Child of:
  [`organicplantmaterial`](#organicplantmaterial)
  [`plantmaterial`](#plantmaterial)
 
+- missing
 - Concept URI token: wood
 
 
 
 []{#otheranthropogenicmaterial}
 
-##  `https://w3id.org/isample/vocabulary/material/1.0/otheranthropogenicmaterial`
+##  other anthropogenic material
 
+
+- Non-metallic material produced by human activity. Organic products
+of agricultural activity are both anthropogenic and organic. Include
+lab preparations like XRF pellet and rock powders. Examples: ceramics,
+concrete, slag, (anthropogenic) glass, mine tailing, plaster, waste.
 - Concept URI token: otheranthropogenicmaterial
 
 
@@ -632,8 +717,21 @@ harvested from the rubber tree (Hevea brasiliensis).
 
 []{#particulate}
 
-##  `https://w3id.org/isample/vocabulary/material/1.0/particulate`
+##  particulate material
 
+
+- Material consists of microscopic particulate material derived by
+precipitation, filtering, or settling from suspension in a fluid, e.g.
+filtrate from water, deposition from atmosphere, astro material
+particles. Might include mineral, organic, or biological material.
+ENVO definition (ENVO_01000060) has "composed of microscopic portions
+of solid or liquid material suspended in another environmental
+material.", refine here to define as the solid particles, distinct
+from a material in which they are suspended. A material that includes
+solid or liquid particles suspended in another material would be a
+dispersed_media in this scheme, not defined in ENVO. Human
+manufactured particulates (e.g. rock powder) should be categorized as
+'anthropogenic material' as well as 'Particulate'
 - Concept URI token: particulate
 
 
@@ -648,14 +746,26 @@ harvested from the rubber tree (Hevea brasiliensis).
 
 - The incombustible residue of something burnt.
 (http://vocab.getty.edu/page/aat/300011788) @en
+- The incombustible residue of something burnt.
+(http://vocab.getty.edu/page/aat/300011788)
+- missing
 - Concept URI token: cinder
 
 
 
 []{#rock}
 
-##  `https://w3id.org/isample/vocabulary/material/1.0/rock`
+##  rock
 
+
+- Consolidated aggregate of particles (grains) of rock, mineral
+(including native elements), mineraloid, or solid organic material.
+Includes mineral aggregates such as granite, shale, marble; natural
+glass such as obsidian; organic material formed by geologic processes
+such a coal;  extraterrestrial material in meteorites; and  crushed
+rock fragments like drill cuttings from rock.  (based on
+http://resource.geosciml.org/classifier/cgi/lithology/rock, same as
+http://purl.obolibrary.org/obo/ENVO_00001995)
 - Concept URI token: rock
 
 
@@ -667,6 +777,7 @@ harvested from the rubber tree (Hevea brasiliensis).
 - Child of:
  [`rock`](#rock)
 
+- missing
 - Concept URI token: basalt
 
 
@@ -678,6 +789,7 @@ harvested from the rubber tree (Hevea brasiliensis).
 - Child of:
  [`rock`](#rock)
 
+- missing
 - Concept URI token: chert
 
 
@@ -689,6 +801,7 @@ harvested from the rubber tree (Hevea brasiliensis).
 - Child of:
  [`chert`](#chert)
 
+- missing
 - Concept URI token: flint
 
 
@@ -703,6 +816,9 @@ harvested from the rubber tree (Hevea brasiliensis).
 
 - The incombustible residue of something burnt.
 (http://vocab.getty.edu/page/aat/300011788) @en
+- The incombustible residue of something burnt.
+(http://vocab.getty.edu/page/aat/300011788)
+- missing
 - Concept URI token: cinder
 
 
@@ -715,6 +831,7 @@ harvested from the rubber tree (Hevea brasiliensis).
  [`biogenicnonorganicmaterial`](#biogenicnonorganicmaterial)
  [`rock`](#rock)
 
+- missing
 - Concept URI token: coal
 
 
@@ -726,6 +843,7 @@ harvested from the rubber tree (Hevea brasiliensis).
 - Child of:
  [`rock`](#rock)
 
+- missing
 
 - **Alternate labels:**
 dolostone
@@ -741,20 +859,24 @@ dolostone
 - Child of:
  [`rock`](#rock)
 
+- missing
 - Concept URI token: gabbro
 
 
 []{#greywacke}
 
 ###  greywacke
+* `greywacke`
 
 
 - Child of:
  [`rock`](#rock)
 
+- missing
 
 - **Alternate labels:**
-graywacke
+graywacke, 
+graywacke, 
 
 - Concept URI token: greywacke
 
@@ -767,39 +889,46 @@ graywacke
 - Child of:
  [`rock`](#rock)
 
+- missing
 - Concept URI token: limestone
 
 
 []{#marble}
 
 ###  marble
+* `marble`
 
 
 - Child of:
  [`rock`](#rock)
 
+- missing
 - Concept URI token: marble
 
 
 []{#obsidian}
 
 ###  obsidian
+* `obsidian`
 
 
 - Child of:
  [`rock`](#rock)
 
+- missing
 - Concept URI token: obsidian
 
 
 []{#pumice}
 
 ###  pumice
+* `pumice`
 
 
 - Child of:
  [`rock`](#rock)
 
+- missing
 - Concept URI token: pumice
 
 
@@ -811,6 +940,7 @@ graywacke
 - Child of:
  [`rock`](#rock)
 
+- missing
 - Concept URI token: slate
 
 

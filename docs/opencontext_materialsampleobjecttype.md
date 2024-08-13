@@ -13,22 +13,23 @@ execute:
   echo: false
 ---
 
-[]{#OpenContextvocabularyextensionformaterialsampletype}
+[]{#OpenContextvocabularyextensionformaterialsampleobjecttype}
 
-# **Concept scheme:** Open Context vocabulary extension for material sample type
+# **Concept scheme:** Open Context vocabulary extension for material sample object type
 
 no modified date
 
 subtitle: 
+  categories for kinds of sample objects specific to archaeological studies
   created based on summary of 'type' values found in OpenContext sample descriptions. This is a bottom-up vocabulary intended as a first draft and demonstration of a material sample type extension for the Open Context community in the iSamples context. Most of the categories are subclasses of spec:Artifact, except for 'bone object' which is a spec:OrganismPart.
 
 Namespace: 
-[`https://w3id.org/isample/opencontext/specimentype/0.1/oc_spectypevocab`](https://w3id.org/isample/opencontext/specimentype/0.1/oc_spectypevocab)
+[`https://w3id.org/isample/opencontext/materialsampleobjecttype/0.1/oc_msotvocab`](https://w3id.org/isample/opencontext/materialsampleobjecttype/0.1/oc_msotvocab)
 
 **History**
 
 
-- [artifact](#artifact)
+- [Artifact](#artifact)
     - [Architectural element](#architecturalelement)
     - [Clothing](#clothing)
     - [Coin](#coin)
@@ -41,15 +42,19 @@ Namespace:
     - [Utility item](#utilityitem)
     - [Weapon](#weapon)
 
-- [organismpart](#organismpart)
+- [Organism part](#organismpart)
     - [Bone object](#peiceofbone)
 
 **Concepts**
 
 []{#artifact}
 
-##  `https://w3id.org/isample/vocabulary/specimentype/1.0/artifact`
+##  Artifact
 
+
+- An object made (manufactured, shaped, modified) by a human being, or
+precursor hominid. Include a set of pieces belonging originally to a
+single object and treated as a single specimen.
 - Concept URI token: artifact
 
 
@@ -192,8 +197,15 @@ other work activity.
 
 []{#organismpart}
 
-##  `https://w3id.org/isample/vocabulary/specimentype/1.0/organismpart`
+##  Organism part
 
+
+- Part of an organism, e.g. a tissue sample, plant leaf, flower, bird
+feather. Include internal parts not composed of organic material (e.g.
+teeth, bone), and hard body parts that are not shed (hoof, horn, tusk,
+claw).  Hair is tricky, include here for now.  Does not necessarily
+imply existance of parent sample. Not fossilized; generally includes
+organism parts native to deposits of Holocene to Recent age.
 - Concept URI token: organismpart
 
 

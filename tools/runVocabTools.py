@@ -40,11 +40,11 @@ def main(command, path):
 #    command = 'uijson'
     path = '../docs'
 # *******************
-    input1 = "material_sample_type|material_type|sampled_feature_type"
+    input1 = "opencontext_material_extension|opencontext_materialsampleobjecttype"
     inputttl = input1.split('|')
 # inputttl is a list of skos rdf vocabulary filenames with Turtle serialization
 # vocab_source_dir is the path to the directory that contains the source files
-    input1 = "spec:specimentypevocabulary|mat:materialsvocabulary|sf:sampledfeaturevocabulary"
+    input1 = "ocmat:oc_materialsvocab|ocmsot:oc_msotvocab"
     inputvocaburi = input1.split('|')
 # make sure have cache directory -- this is where the sqlAlchemy db will be
     cachepath = "../cache/vocabularies.db"
@@ -62,14 +62,15 @@ def main(command, path):
         print(f"Created {path} since it didn't exist.")
 
     # do function of original Makefile here
-
-    for inputf in inputttl:
-        result = load_cachedb(sourcevocabdir + "/" + inputf + ".ttl", cachepath)
+    index = 0
+    while index < len(inputttl):
+    #for inputf in inputttl:
+        result = load_cachedb(sourcevocabdir + "/" + inputttl[index] + ".ttl", inputvocaburi[index], cachepath)
         if (result == 0):
-            print(f"load_cachedb call successful for: {inputf}")
+            print(f"load_cachedb call successful for: {inputttl[index]}")
         else:
-            print(f"load_cachedb had problem processing: {inputf}")
-
+            print(f"load_cachedb had problem processing: {inputttl[index]}")
+        index += 1
         # ***********************
 
     #  essfrole_earthenv_sampled_feature_role  spec_earthenv_specimen_type
@@ -95,10 +96,10 @@ def main(command, path):
 # def _run_make_in_container(target: str):
 #    subprocess.run(["/usr/bin/make", "-C", "/app", "-f", "/app/Makefile", target])
 
-def load_cachedb(inputf, cachepath):
+def load_cachedb(inputf, inputuri, cachepath):
     # tools/vocab.py --verbosity ERROR -s $(CACHE) load $(SRC)/$@
     print(f"cachdb file to load: {inputf}")
-    load_args = ["--verbosity", "ERROR", "-s", cachepath, "load", inputf]
+    load_args = ["--verbosity", "ERROR", "-s", cachepath, "load", inputf, inputuri]
     result = _run_python_in_container("vocab.py", load_args, f="")
     if (result == 0):
         print(f"vocab.py call successful for {inputf}")

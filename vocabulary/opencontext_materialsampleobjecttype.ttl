@@ -1,80 +1,15 @@
-# baseURI: https://w3id.org/isample/opencontext/specimentype/0.1/oc_spectypevocab
+# baseURI: https://w3id.org/isample/opencontext/materialsampleobjecttype/0.1/oc_msotvocab
 # imports: http://www.w3.org/2004/02/skos/core
 
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix ocspec: <https://w3id.org/isample/opencontext/specimentype/0.1/> .
+@prefix msot: <https://w3id.org/isample/vocabulary/materialsampleobjecttype/1.0/> .
+@prefix ocmsot: <https://w3id.org/isample/opencontext/materialsampleobjecttype/0.1/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@prefix spec: <https://w3id.org/isample/vocabulary/specimentype/1.0/> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix schema: <http://schema.org/> .
-
-ocspec:architecturalelement
-  rdf:type skos:Concept ;
-  rdfs:label "Architectural element"@en ;
-  skos:broader spec:artifact ;
-  skos:definition "Artifact that was part of a building."@en ;
-  skos:example "akroterion, antefix, finial, moulding, sima, blocks (shaped masses), brick, building stone, stud"@en ;
-  skos:inScheme ocspec:oc_spectypevocab ;
-  skos:note "could be subdivided into structural (e.g. brick, building stone, stud), ornamental (antefix, finial, moulding), and utilitarian (rainwater-spout, ridge-tile, roof-tile, window-pane) ?"@en ;
-  skos:prefLabel "Architectural element"@en ;
-.
-ocspec:clothing
-  rdf:type skos:Concept ;
-  rdfs:label "Clothing"@en ;
-  skos:broader spec:artifact ;
-  skos:definition "Item intended to be worn to cover the (human) body"@en ;
-  skos:example "shoes (footwear), shirt, jacket, pants, skirt, cape"@en ;
-  skos:inScheme ocspec:oc_spectypevocab ;
-  skos:note "Includes parts of clothing objects like buttons (fasteners), color patches (military patches), buckles, but not external decorations (jewlery, ornamental brooches)."@en ;
-  skos:prefLabel "Clothing"@en ;
-.
-ocspec:coin
-  rdf:type skos:Concept ;
-  rdfs:label "Coin"@en ;
-  skos:broader spec:artifact ;
-  skos:definition "peice of metal issued by some authority and recognized as money."@en ;
-  skos:inScheme ocspec:oc_spectypevocab ;
-  skos:note "Typically flat, with some identifying feature imprinted on the surface to establish authenticity and value"@en ;
-  skos:prefLabel "Coin"@en ;
-.
-ocspec:containerobject
-  rdf:type skos:Concept ;
-  rdfs:label "Container object"@en ;
-  skos:broader spec:artifact ;
-  skos:definition "Item designed to contain some fluid, granular material, or other items for preservation, transportation or display."@en ;
-  skos:example "amphora, aryballos, barrel, bottle, jar, Oenochoe, pithos"@en ;
-  skos:inScheme ocspec:oc_spectypevocab ;
-  skos:prefLabel "Container object"@en ;
-.
-ocspec:domesticitem
-  rdf:type skos:Concept ;
-  rdfs:label "Domestic item"@en ;
-  skos:broader spec:artifact ;
-  skos:definition "item intended for household use."@en ;
-  skos:example "loom weight, needle, spindle-whorl, spool, cup, dish, plate, cooking-pan, cooking-stand, funnel, grinding-stone, lid, stoneware (pottery), utensils, globes (lighting device components), lamp, cosmetic-pot"@en ;
-  skos:inScheme ocspec:oc_spectypevocab ;
-  skos:prefLabel "Domestic item"@en ;
-.
-ocspec:oc_spectypevocab
-  rdf:type owl:Ontology ;
-  rdf:type skos:ConceptScheme ;
-  dcterms:contributor "Hong Cui, Sarah Hyunju Song" ;
-  skos:inScheme spec:specimentypevocabulary ;
-  skos:definition "categories for categorization of kinds of sample objects specific to archaeological studies"@en ;
-  dcterms:created "2022-09-30"^^xsd:date ;
-  dcterms:creator <https://orcid.org/0000-0001-6041-5302> ;
-  dcterms:license <https://creativecommons.org/licenses/by/4.0/legalcode> ;
-  rdfs:comment "created based on summary of 'type' values found in OpenContext sample descriptions. This is a bottom-up vocabulary intended as a first draft and demonstration of a material sample type extension for the Open Context community in the iSamples context. Most of the categories are subclasses of spec:Artifact, except for 'bone object' which is a spec:OrganismPart."@en ;
-  rdfs:label "Open Context vocabulary extension for material sample type"@en ;
-  owl:imports <http://www.w3.org/2004/02/skos/core> ;
-  skos:prefLabel "Open Context vocabulary extension for material sample type"@en ;
-  schema:funding <AWDID:2004562> ;
-  schema:provider <http://cor.esipfed.org/ont#/> ;
-  schema:codeRepository <https://github.com/isamplesorg/metadata_profile_archaeology/tree/main/vocabulary> ;
-.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <AWDID:2004562>
   rdf:type schema:Grant ;
@@ -82,79 +17,144 @@ ocspec:oc_spectypevocab
   schema:name "Collaborative Research: Frameworks: Internet of Samples: Toward an Interdisciplinary Cyberinfrastructure for Material Samples" ;
   schema:url "https://nsf.gov/awardsearch/showAward?AWD_ID=2004562" ;
 .
-
-ocspec:ornament
+ocmsot:architecturalelement
+  rdf:type skos:Concept ;
+  rdfs:label "Architectural element"@en ;
+  skos:broader msot:artifact ;
+  skos:definition "Artifact that was part of a building."@en ;
+  skos:example "akroterion, antefix, finial, moulding, sima, blocks (shaped masses), brick, building stone, stud"@en ;
+  skos:inScheme ocmsot:oc_msotvocab ;
+  skos:note "could be subdivided into structural (e.g. brick, building stone, stud), ornamental (antefix, finial, moulding), and utilitarian (rainwater-spout, ridge-tile, roof-tile, window-pane) ?"@en ;
+  skos:prefLabel "Architectural element"@en ;
+.
+ocmsot:clothing
+  rdf:type skos:Concept ;
+  rdfs:label "Clothing"@en ;
+  skos:broader msot:artifact ;
+  skos:definition "Item intended to be worn to cover the (human) body"@en ;
+  skos:example "shoes (footwear), shirt, jacket, pants, skirt, cape"@en ;
+  skos:inScheme ocmsot:oc_msotvocab ;
+  skos:note "Includes parts of clothing objects like buttons (fasteners), color patches (military patches), buckles, but not external decorations (jewlery, ornamental brooches)."@en ;
+  skos:prefLabel "Clothing"@en ;
+.
+ocmsot:coin
+  rdf:type skos:Concept ;
+  rdfs:label "Coin"@en ;
+  skos:broader msot:artifact ;
+  skos:definition "peice of metal issued by some authority and recognized as money."@en ;
+  skos:inScheme ocmsot:oc_msotvocab ;
+  skos:note "Typically flat, with some identifying feature imprinted on the surface to establish authenticity and value"@en ;
+  skos:prefLabel "Coin"@en ;
+.
+ocmsot:containerobject
+  rdf:type skos:Concept ;
+  rdfs:label "Container object"@en ;
+  skos:broader msot:artifact ;
+  skos:definition "Item designed to contain some fluid, granular material, or other items for preservation, transportation or display."@en ;
+  skos:example "amphora, aryballos, barrel, bottle, jar, Oenochoe, pithos"@en ;
+  skos:inScheme ocmsot:oc_msotvocab ;
+  skos:prefLabel "Container object"@en ;
+.
+ocmsot:domesticitem
+  rdf:type skos:Concept ;
+  rdfs:label "Domestic item"@en ;
+  skos:broader msot:artifact ;
+  skos:definition "item intended for household use."@en ;
+  skos:example "loom weight, needle, spindle-whorl, spool, cup, dish, plate, cooking-pan, cooking-stand, funnel, grinding-stone, lid, stoneware (pottery), utensils, globes (lighting device components), lamp, cosmetic-pot"@en ;
+  skos:inScheme ocmsot:oc_msotvocab ;
+  skos:prefLabel "Domestic item"@en ;
+.
+ocmsot:oc_msotvocab
+  rdf:type owl:Ontology ;
+  rdf:type skos:ConceptScheme ;
+  dcterms:contributor "Hong Cui, Sarah Hyunju Song" ;
+  dcterms:created "2022-09-30"^^xsd:date ;
+  dcterms:creator <https://orcid.org/0000-0001-6041-5302> ;
+  dcterms:license <https://creativecommons.org/licenses/by/4.0/legalcode> ;
+  schema:codeRepository <https://github.com/isamplesorg/metadata_profile_archaeology/tree/main/vocabulary> ;
+  schema:funding <AWDID:2004562> ;
+  schema:provider <http://cor.esipfed.org/ont#/> ;
+  rdfs:comment "Vocabulary created based on summary of 'type' values found in OpenContext sample descriptions. This is a bottom-up vocabulary intended as a first draft and demonstration of a material sample type extension for the Open Context community in the iSamples context. Most of the categories are subclasses of msot:Artifact, except for 'bone object' which is a msot:OrganismPart."@en ;
+  rdfs:label "Open Context vocabulary extension for material sample object type"@en ;
+  owl:imports <http://www.w3.org/2004/02/skos/core> ;
+  skos:definition "categories for kinds of sample objects specific to archaeological studies"@en ;
+  skos:inScheme msot:materialsampleobjecttypevocabulary ;
+  skos:prefLabel "Open Context vocabulary extension for material sample object type"@en ;
+.
+ocmsot:ornament
   rdf:type skos:Concept ;
   rdfs:label "Ornament"@en ;
-  skos:broader spec:artifact ;
+  skos:broader msot:artifact ;
   skos:definition "item intended for decoration."@en ;
   skos:example "bead, pendant, ring, inlay, plaque, statuette, tondo"@en ;
-  skos:inScheme ocspec:oc_spectypevocab ;
+  skos:inScheme ocmsot:oc_msotvocab ;
   skos:prefLabel "Ornament"@en ;
 .
-ocspec:peiceofbone
+ocmsot:peiceofbone
   rdf:type skos:Concept ;
   rdfs:label "Bone object"@en ;
-  skos:broader spec:organismpart ;
+  skos:broader msot:organismpart ;
   skos:definition "Sample is an individual bone or part of a bone from an animal."@en ;
-  skos:inScheme ocspec:oc_spectypevocab ;
+  skos:inScheme ocmsot:oc_msotvocab ;
   skos:prefLabel "Bone object"@en ;
 .
-ocspec:photograph
+ocmsot:photograph
   rdf:type skos:Concept ;
   rdfs:label "Photograph"@en ;
-  skos:broader spec:artifact ;
+  skos:broader msot:artifact ;
   skos:definition "image produced by the action of light on a chemically sensitive surface, preserved on paper, glass or other physical substrate."@en ;
-  skos:inScheme ocspec:oc_spectypevocab ;
+  skos:inScheme ocmsot:oc_msotvocab ;
   skos:note "in this context, photograph is the physical object manifesting the image, not the image itself, which can also be represented electronically"@en ;
   skos:prefLabel "Photograph"@en ;
 .
-ocspec:sherd
+ocmsot:sherd
   rdf:type skos:Concept ;
   rdfs:label "Pot sherd"@en ;
-  skos:broader spec:artifact ;
+  skos:broader msot:artifact ;
   skos:definition "fragment of pottery"@en ;
-  skos:inScheme ocspec:oc_spectypevocab ;
+  skos:inScheme ocmsot:oc_msotvocab ;
   skos:prefLabel "Pot sherd"@en ;
 .
-ocspec:tile
+ocmsot:tile
   rdf:type skos:Concept ;
   rdfs:label "Tile"@en ;
-  skos:broader spec:artifact ;
+  skos:broader msot:artifact ;
   skos:definition "flat or curved piece of fired clay, stone, or concrete used especially for roofs, floors, or walls and often for ornamental work"@en ;
-  skos:inScheme ocspec:oc_spectypevocab ;
+  skos:inScheme ocmsot:oc_msotvocab ;
   skos:note "note possible overlap with 'Architectural element' and 'Ornament'"@en ;
   skos:prefLabel "Tile"@en ;
 .
-ocspec:utilityitem
+ocmsot:utilityitem
   rdf:type skos:Concept ;
   rdfs:label "Utility item"@en ;
-  skos:broader spec:artifact ;
+  skos:broader msot:artifact ;
   skos:definition "Item intended for use in manufacture, construction, agriculture or other work activity."@en ;
   skos:example "bolts (fasteners), hooks (fasteners), nails (fasteners), rivet, screws, spike, bellows, chain, crucible, stamps (tools), wire, tools"@en ;
-  skos:inScheme ocspec:oc_spectypevocab ;
+  skos:inScheme ocmsot:oc_msotvocab ;
   skos:prefLabel "Utility item"@en ;
 .
-ocspec:weapon
+ocmsot:weapon
   rdf:type skos:Concept ;
   rdfs:label "Weapon"@en ;
-  skos:broader spec:artifact ;
+  skos:broader msot:artifact ;
   skos:definition "Item for use in combat, hunting, or self defense"@en ;
   skos:example "arrow, balls (bullets), blade, cartridges (ammunition cases), gunflints, sling-shot, spear-head"@en ;
-  skos:inScheme ocspec:oc_spectypevocab ;
+  skos:inScheme ocmsot:oc_msotvocab ;
   skos:prefLabel "Weapon"@en ;
 .
-spec:artifact
+msot:artifact
+  rdf:type skos:Concept ;
+  skos:definition "An object made (manufactured, shaped, modified) by a human being, or precursor hominid. Include a set of pieces belonging originally to a single object and treated as a single specimen."@en ;
+  skos:inScheme ocmsot:oc_msotvocab ;
+  skos:inScheme msot:materialsampleobjecttypevocabulary ;
   skos:prefLabel "Artifact"@en ;
-  rdf:type skos:Concept ;
-  skos:topConceptOf ocspec:oc_spectypevocab ;
-  skos:inScheme spec:specimentypevocabulary ;
-  skos:definition "An object made (manufactured, shaped, modified) by a human being, or precursor hominid. Include a set of pieces belonging originally to a single object and treated as a single specimen."@en;
+  skos:topConceptOf ocmsot:oc_msotvocab ;
 .
-spec:organismpart
-  skos:prefLabel "Organism part"@en ;
+msot:organismpart
   rdf:type skos:Concept ;
-  skos:topConceptOf ocspec:oc_spectypevocab ;
-  skos:inScheme spec:specimentypevocabulary ;
   skos:definition "Part of an organism, e.g. a tissue sample, plant leaf, flower, bird feather. Include internal parts not composed of organic material (e.g. teeth, bone), and hard body parts that are not shed (hoof, horn, tusk, claw).  Hair is tricky, include here for now.  Does not necessarily imply existance of parent sample. Not fossilized; generally includes organism parts native to deposits of Holocene to Recent age."@en ;
+  skos:inScheme ocmsot:oc_msotvocab ;
+  skos:inScheme msot:materialsampleobjecttypevocabulary ;
+  skos:prefLabel "Organism part"@en ;
+  skos:topConceptOf ocmsot:oc_msotvocab ;
 .
