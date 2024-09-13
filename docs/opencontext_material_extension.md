@@ -23,7 +23,7 @@ subtitle:
   vocabulary of materials typical of archeological samples
 
 Namespace: 
-[`https://w3id.org/isample/opencontext/material/0.1/oc_materialsvocab`](https://w3id.org/isample/opencontext/material/0.1/oc_materialsvocab)
+[`https://w3id.org/isample/opencontext/material/oc_materialsvocab`](https://w3id.org/isample/opencontext/material/oc_materialsvocab)
 
 **History**
 
@@ -55,11 +55,8 @@ Namespace:
         - [hair](#hair)
         - [leather](#leather)
     - [organic plant material](#organicplantmaterial)
-        - [Wood](#wood)
-        - [Plant fiber](#plantfiber)
-    - [plant material](#plantmaterial)
-        - [Plant fiber](#plantfiber)
-        - [Wood](#wood)
+        - [plant fiber](#plantfiber)
+        - [wood](#wood)
 
 - [other anthropogenic material](#otheranthropogenicmaterial)
     - [anthropogenic organic material](#anthropogenicorganicmaterial)
@@ -187,13 +184,11 @@ degrees Celsius and a boiling point of 2,807 degrees Celsius.
 []{#lead}
 
 ###  lead
-* `lead`
 
 
 - Child of:
  [`anthropogenicmetal`](#anthropogenicmetal)
 
-- lead or lead-rich alloy
 - lead or lead-rich alloy
 - Concept URI token: lead
 
@@ -201,14 +196,11 @@ degrees Celsius and a boiling point of 2,807 degrees Celsius.
 []{#pewter}
 
 ###  pewter
-* `pewter`
 
 
 - Child of:
  [`anthropogenicmetal`](#anthropogenicmetal)
 
-- alloy consisting of mostly tin,  with antimony,  minor copper or
-bismuth, and sometimes silver.
 - alloy consisting of mostly tin,  with antimony,  minor copper or
 bismuth, and sometimes silver.
 - Concept URI token: pewter
@@ -229,7 +221,6 @@ skeleton,
 []{#amber}
 
 ###  amber
-* `amber`
 
 
 - Child of:
@@ -342,7 +333,6 @@ obsidian, Opal. (https://en.wikipedia.org/wiki/Mineraloid)
 []{#mica}
 
 ###  mica
-* `mica`
 
 
 - Child of:
@@ -355,7 +345,6 @@ obsidian, Opal. (https://en.wikipedia.org/wiki/Mineraloid)
 []{#quartz}
 
 ###  quartz
-* `quartz`
 
 
 - Child of:
@@ -444,53 +433,12 @@ resistant to putrefication and relatively soft and flexible when dry.
 - Concept URI token: organicplantmaterial
 
 
-[]{#wood}
-
-####  Wood
-* `wood`
-
-
-- Child of:
- [`organicplantmaterial`](#organicplantmaterial)
- [`plantmaterial`](#plantmaterial)
-
-- missing
-- Concept URI token: wood
-
-
 []{#plantfiber}
 
-####  Plant fiber
-* `plant fiber`
+####  plant fiber
 
 
 - Child of:
- [`plantmaterial`](#plantmaterial)
- [`organicplantmaterial`](#organicplantmaterial)
-
-- missing
-- Concept URI token: plantfiber
-
-
-[]{#plantmaterial}
-
-###  plant material
-
-
-- Child of:
- [`organicmaterial`](#organicmaterial)
-
-- Concept URI token: plantmaterial
-
-
-[]{#plantfiber}
-
-####  Plant fiber
-* `plant fiber`
-
-
-- Child of:
- [`plantmaterial`](#plantmaterial)
  [`organicplantmaterial`](#organicplantmaterial)
 
 - missing
@@ -499,13 +447,11 @@ resistant to putrefication and relatively soft and flexible when dry.
 
 []{#wood}
 
-####  Wood
-* `wood`
+####  wood
 
 
 - Child of:
  [`organicplantmaterial`](#organicplantmaterial)
- [`plantmaterial`](#plantmaterial)
 
 - missing
 - Concept URI token: wood
@@ -745,8 +691,6 @@ manufactured particulates (e.g. rock powder) should be categorized as
  [`rock`](#rock)
 
 - The incombustible residue of something burnt.
-(http://vocab.getty.edu/page/aat/300011788) @en
-- The incombustible residue of something burnt.
 (http://vocab.getty.edu/page/aat/300011788)
 - missing
 - Concept URI token: cinder
@@ -815,8 +759,6 @@ http://purl.obolibrary.org/obo/ENVO_00001995)
  [`rock`](#rock)
 
 - The incombustible residue of something burnt.
-(http://vocab.getty.edu/page/aat/300011788) @en
-- The incombustible residue of something burnt.
 (http://vocab.getty.edu/page/aat/300011788)
 - missing
 - Concept URI token: cinder
@@ -866,7 +808,6 @@ dolostone
 []{#greywacke}
 
 ###  greywacke
-* `greywacke`
 
 
 - Child of:
@@ -875,8 +816,7 @@ dolostone
 - missing
 
 - **Alternate labels:**
-graywacke, 
-graywacke, 
+graywacke
 
 - Concept URI token: greywacke
 
@@ -896,7 +836,6 @@ graywacke,
 []{#marble}
 
 ###  marble
-* `marble`
 
 
 - Child of:
@@ -909,7 +848,6 @@ graywacke,
 []{#obsidian}
 
 ###  obsidian
-* `obsidian`
 
 
 - Child of:
@@ -922,7 +860,6 @@ graywacke,
 []{#pumice}
 
 ###  pumice
-* `pumice`
 
 
 - Child of:

@@ -21,10 +21,10 @@ no modified date
 
 subtitle: 
   categories for kinds of sample objects specific to archaeological studies
-  created based on summary of 'type' values found in OpenContext sample descriptions. This is a bottom-up vocabulary intended as a first draft and demonstration of a material sample type extension for the Open Context community in the iSamples context. Most of the categories are subclasses of spec:Artifact, except for 'bone object' which is a spec:OrganismPart.
+  Vocabulary created based on summary of 'type' values found in OpenContext sample descriptions. This is a bottom-up vocabulary intended as a first draft and demonstration of a material sample type extension for the Open Context community in the iSamples context. Most of the categories are subclasses of msot:Artifact, except for 'bone object' which is a msot:OrganismPart.
 
 Namespace: 
-[`https://w3id.org/isample/opencontext/materialsampleobjecttype/0.1/oc_msotvocab`](https://w3id.org/isample/opencontext/materialsampleobjecttype/0.1/oc_msotvocab)
+[`https://w3id.org/isample/opencontext/materialsampleobjecttype/oc_msotvocab`](https://w3id.org/isample/opencontext/materialsampleobjecttype/oc_msotvocab)
 
 **History**
 

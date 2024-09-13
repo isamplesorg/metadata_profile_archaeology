@@ -1,9 +1,9 @@
-# baseURI: https://w3id.org/isample/opencontext/materialsampleobjecttype/0.1/oc_msotvocab
+# baseURI: https://w3id.org/isample/opencontext/materialsampleobjecttype/oc_msotvocab
 # imports: http://www.w3.org/2004/02/skos/core
 
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix msot: <https://w3id.org/isample/vocabulary/materialsampleobjecttype/1.0/> .
-@prefix ocmsot: <https://w3id.org/isample/opencontext/materialsampleobjecttype/0.1/> .
+@prefix msot: <https://w3id.org/isample/vocabulary/materialsampleobjecttype/> .
+@prefix ocmsot: <https://w3id.org/isample/opencontext/materialsampleobjecttype/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
