@@ -71,6 +71,7 @@ ocmsot:oc_msotvocab
   dcterms:created "2022-09-30"^^xsd:date ;
   dcterms:creator <https://orcid.org/0000-0001-6041-5302> ;
   dcterms:license <https://creativecommons.org/licenses/by/4.0/legalcode> ;
+  dcterms:modified "2024-09-13"^^xsd:date ;
   schema:codeRepository <https://github.com/isamplesorg/metadata_profile_archaeology/tree/main/vocabulary> ;
   schema:funding <AWDID:2004562> ;
   schema:provider <http://cor.esipfed.org/ont#/> ;
@@ -78,6 +79,7 @@ ocmsot:oc_msotvocab
   rdfs:label "Open Context vocabulary extension for material sample object type"@en ;
   owl:imports <http://www.w3.org/2004/02/skos/core> ;
   skos:definition "categories for kinds of sample objects specific to archaeological studies"@en ;
+  skos:historyNote "2024-09-13 SMR remove version number from URI"@en ;
   skos:inScheme msot:materialsampleobjecttypevocabulary ;
   skos:prefLabel "Open Context vocabulary extension for material sample object type"@en ;
 .
