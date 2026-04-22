@@ -42,7 +42,7 @@ jobs:
           path: ${{ github.workspace }}
           # provide ttl file names without extensions; the base file name will be 
           #    used for output files with the appropriate extension.
-          inputttl: opencontext_material_extension|opencontext_materialsampletype
+          inputttl: opencontext_material_extension|opencontext_materialsampleobjecttype
           # these are the URIs for the ConceptScheme; there must be a conceptScheme defined in each vocabulary.
           inputvocaburi: ocmat:oc_materialsvocab|ocspec:oc_spectypevocab
 

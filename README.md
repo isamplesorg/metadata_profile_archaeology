@@ -1,4 +1,18 @@
-#  Vocabulary presentation template
+# Vocabulary extensions for OpenContext Archaeological material samples.
+
+## Vocabulary documents
+This repository hosts two extension vocabularies for use with iSamples metadata describing archaeological material samples registered in the [OpenContext system](https://opencontext.org/about/): a material-type extension and a material-sample-object-type extension. The authoritative source files are SKOS RDF vocabularies serialized using Turtle syntax, located in the **vocabulary** folder. The **docs** folder contains Markdown and HTML presentations of the vocabulary content.
+
+### Rendered documentation
+The rendered vocabulary pages are published at:
+**<http://isamples.org/metadata_profile_archaeology/>** (also reachable via `https://isamplesorg.github.io/metadata_profile_archaeology/`, which 301-redirects there). The landing page is generated from [`docs/readme.md`](docs/readme.md).
+
+| Vocabulary | Source `.ttl` | Concept scheme CURIE | Rendered HTML |
+|---|---|---|---|
+| OpenContext material extension | [`opencontext_material_extension.ttl`](vocabulary/opencontext_material_extension.ttl) | `ocmat:oc_materialsvocab` | [HTML](http://isamples.org/metadata_profile_archaeology/opencontext_material_extension.html) |
+| OpenContext material-sample-object type | [`opencontext_materialsampleobjecttype.ttl`](vocabulary/opencontext_materialsampleobjecttype.ttl) | `ocspec:oc_spectypevocab` | [HTML](http://isamples.org/metadata_profile_archaeology/opencontext_materialsampleobjecttype.html) |
+
+##  Vocabulary presentation template
 
 This repository hosts python code and github actions to support maintenance and presentation of vocabularies represented using the SKOS RDF vocabulary, serialized using Turtle. It includes a github action configuration that will update files representing the vocabulary in Markdown and HTML format. The SKOS representation of the vocabularies in the Vocabulary folder are considered the canonical versions; changes to the vocabulary should be made in the SKOS files; updates (pushes) to the vocabulary will trigger a Github action update the Markdown and HTML representations. The HTML representation is published via Github pages from the content in the docs folder.
 
