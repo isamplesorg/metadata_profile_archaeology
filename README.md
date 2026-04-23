@@ -91,5 +91,9 @@ The code assumes the root of the repository is a skos:ConceptScheme, and that th
 ### Testing
 There is a test file at `.github/workflows/integration.yml`, which can be run manually using the workflow dispatch option.  It contains the necessary instruction to check out the repository and run it as a GitHub action.
 
-### 
+### Entry Point
 The Docker entrypoint of the action is the python file located at `.github/actions/vocabularies/github_action_main.py`.  GitHub is responsible for converting the action parameters into environment variables that the script interprets.
+
+## For contributors / AI coding agents
+- [`AGENTS.md`](AGENTS.md) — operational guide: local test commands, Docker run, what not to touch, and the shared-with-sibling-repos pipeline-fix pattern.
+- [`CLAUDE.md`](CLAUDE.md) — project-specific history: vocab list, known-fix log, deploy pipeline, workflow inventory.
