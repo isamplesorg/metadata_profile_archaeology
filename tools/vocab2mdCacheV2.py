@@ -13,7 +13,7 @@ and change formatting
 This code reads a skos vocabulary file from a sqlAlchemy database
 located at ../cache/vocabularies. Vocabularies are represented using SKOS
 RDF vocabulary and Turtle serialization. Vocabularies are identified with
-the  URI of the skos:ConceptScheme. The vocabulary representation is transformed
+the  URI of the skos:ConceptScheme. The vocabualary representation is transformed
 from SKOS/rdf/turtle to stdout as a text Markdown file using Quarto conventions.
 The markdown uses some special syntax that is interpreted by 
 Quarto for better html rendering
@@ -73,9 +73,6 @@ LOG_LEVELS = {
     "CRITICAL": logging.CRITICAL,
 }
 
-def getLogger():
-    return logging.getLogger("voc2md")
-
 
 
 NS = {
@@ -95,7 +92,11 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 """
 
 INDENT = "  "
+verbosity = "INFO"
+#control print errors; these will appear in the output markdown file.
 
+def getLogger():
+    return logging.getLogger("vocab2mdCacheV2")
 
 def skosT(term):
     return rdflib.URIRef(f"{NS['skos']}{term}")
@@ -131,6 +132,13 @@ def getVocabRoot(g, v):
     Accepts both concept->scheme (``skos:topConceptOf``) and
     scheme->concept (``skos:hasTopConcept``) assertions, since SKOS
     vocabularies in the wild use either (or both).
+
+    If neither assertion appears, falls back to every concept in the
+    scheme treated as a flat root. The fallback honors both direct
+    ``rdf:type skos:Concept`` and subclass typings (``rdf:type ?C`` where
+    ``?C rdfs:subClassOf skos:Concept``) — the latter is needed for
+    vocabularies like MMISW whose items are typed with a bespoke class
+    that declares ``rdfs:subClassOf skos:Concept``.
     """
     q = PFX + """SELECT DISTINCT ?s WHERE {
         { ?s skos:topConceptOf ?vocabulary . }
@@ -138,10 +146,21 @@ def getVocabRoot(g, v):
         { ?vocabulary skos:hasTopConcept ?s . }
     }"""
     qres = g.query(q, initBindings={'vocabulary': v})
-    res = []
-    for row in qres:
-        res.append(row[0])
-    return res
+    res = [row[0] for row in qres]
+    if res:
+        return res
+
+    q = PFX + """SELECT DISTINCT ?s WHERE {
+        ?s skos:inScheme ?vocabulary .
+        {
+            ?s rdf:type skos:Concept .
+        } UNION {
+            ?s rdf:type ?cls .
+            ?cls rdfs:subClassOf skos:Concept .
+        }
+    }"""
+    qres = g.query(q, initBindings={'vocabulary': v})
+    return [row[0] for row in qres]
 
 def getNarrower(g, v, r):
     """Return concepts that are skos:broader of r.
@@ -170,11 +189,10 @@ def getNarrower(g, v, r):
 
 def getObjects(g, s, p):
     L = getLogger()
-#    test = g.namespace_manager.namespaces()
-#    for prefix, ns_url in test:
-#        L.debug(f"vocab2md/getObjects: {prefix}: {ns_url}")
-    q = rdflib.plugins.sparql.prepareQuery(PFX + """SELECT ?o WHERE {?subject ?predicate ?o .}""")
-#    q = rdflib.plugins.sparql.prepareQuery("SELECT ?o WHERE {?subject ?predicate ?o .}", initNs=test)
+    q = rdflib.plugins.sparql.prepareQuery(PFX + """SELECT ?o
+    WHERE {
+        ?subject ?predicate ?o .
+    }""")
     L.debug(f"getObject prefixes: {PFX}\n")
     L.debug(f"getObject subject: {s}\n")
     L.debug(f"getObject predicate: {p}\n")
@@ -240,16 +258,16 @@ def describeTerm(g, t, depth=0, level=1):
         res.append(f"{hl} {labels[0].strip()}")
         for label in labels[1:]:
             res.append(f"* `{label}`")
-        res.append("")
+#        res.append("")
 
     broader = getObjects(g, t, skosT('broader'))
     if len(broader) > 0:
-        res.append("")
+#        res.append("")
         res.append(f"- Child of:")
         for b in broader:
             bt = b.split('/')[-1]
             res.append(f" [`{bt}`](#{bt})")
-    res.append("")
+#    res.append("")
     # The textual description will be present in rdfs:comment or
     # skos:definition. 
     comments = []
@@ -265,10 +283,10 @@ def describeTerm(g, t, depth=0, level=1):
         res += lines
     seealsos = getObjects(g, t, rdfsT('seeAlso'))
     if len(seealsos) > 0:
-        res.append("")
+#       res.append("")
         res.append(f"- See Also:")
         for seealso in seealsos:
-            res.append(f"* [{seealso.n3(g.namespace_manager)}]({seealso})")
+            res.append(f"  * [{seealso.n3(g.namespace_manager)}]({seealso})")
     altlabels = []
     for altlabel in getObjects(g, t, skosT('altLabel')):
         altlabels.append(altlabel)
@@ -276,11 +294,11 @@ def describeTerm(g, t, depth=0, level=1):
         delimiter = ""
         if len(altlabels) > 1:
             delimiter = ", "
-        res.append("")
+#        res.append("")
         res.append(f"- **Alternate labels:**")
         for altlabel in altlabels:
             res.append(f"{altlabel}{delimiter}")
-        res.append("")
+ #       res.append("")
 
     sources = []
     for source in getObjects(g, t, dctT('source')):
@@ -289,13 +307,13 @@ def describeTerm(g, t, depth=0, level=1):
         delimiter = ""
         if len(sources) > 1:
             delimiter = ", "
-        res.append("")
+#        res.append("")
         res.append(f"- **Source:**")
         for source in sources:
             res.append(f"{source}{delimiter}")
-        res.append("")
+ #       res.append("")
 
-    res.append(f"- Concept URI token: {t.split('/')[-1]}")
+    res.append(f"- Concept URI: {t}")
     res.append("")
 
     return res
@@ -315,7 +333,7 @@ def describeVocabulary(G, V):
     res = []
     level = [1, ]
     L = getLogger()
-    L.debug(f"vocab2md.describeVocabulary: {G} graph input")
+    L.debug(f"vocab2md: {G} graph input")
 
     # this is the header for Quarto in the markdown output
     res.append("---")
@@ -420,32 +438,19 @@ def main(source, vocabulary):
     # res = []
     # res.append(conceptschemelist(vgraph))
 
-    verbosity = "DEBUG".upper()
+    # logging verbosity is set with global varable , at top
+    # when run github action, log statements are in the github action log.
+    # verbosity = "DEBUG".upper()
     logging_config["loggers"][""]["level"] = verbosity
     logging.config.dictConfig(logging_config)
     L = getLogger()
 
-    # this process expects that the triples for a SKOS vocabulary
-    #  have been loaded in an SQLalchemy SQLlite database. The vocab.py
-    #  code in this repository does the loading and should be run beforhand
-    # NOTE that Github seems to cache stuff that goes in the vocabularies.db
-    #  so if any namespace bindings change between runs, the old bindings
-    #  are apparently cached somewhere and break things. Delete the vocabularies.db
-    #  to (hopefully) avoid this problem.
     source = f"sqlite:///{source}"
     store = navocab.VocabularyStore(storage_uri=source)
     res = []
 
-    L.debug(f"vocab2md source: {source}")
-    L.debug(f"vocab2md vocabulary: {vocabulary}")
-    try:
-        test = store._g.namespace_manager.expand_curie(vocabulary)
-        L.debug(f"vocabulary expanded curie: {test}")
-    except Exception as error:
-        L.debug("vocabulary expanded curie, exception occurred:", error)
-    
     vocabulary = store.expand_name(vocabulary)
-    L.debug(f"main: call describeVocabulary for: {vocabulary}")
+    L.debug(f"main: call desribeVocabulary for: {vocabulary}")
     theMarkdown = describeVocabulary(store._g, vocabulary)
     res.append(theMarkdown)
     # send the result to stdout via print.
