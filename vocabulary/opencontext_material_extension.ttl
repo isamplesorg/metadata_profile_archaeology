@@ -310,6 +310,17 @@ ocmat:organicanimalmaterial
   skos:inScheme ocmat:oc_materialsvocab ;
   skos:prefLabel "organic animal material"@en ;
 .
+ocmat:organicanimalproduct
+  rdf:type skos:Concept ;
+  rdfs:label "organic animal material"@en ;
+  skos:altLabel "organic animal product"@en ;
+  skos:broader mat:organicmaterial ;
+  skos:definition "Legacy OpenContext term kept for data compatibility; use ocmat:organicanimalmaterial for new records."@en ;
+  skos:exactMatch ocmat:organicanimalmaterial ;
+  skos:inScheme ocmat:oc_materialsvocab ;
+  skos:note "Deprecated compatibility alias for existing OpenContext records."@en ;
+  skos:prefLabel "organic animal material"@en ;
+.
 ocmat:organicplantmaterial
   rdf:type skos:Concept ;
   rdfs:label "organic plant material"@en ;
@@ -317,6 +328,16 @@ ocmat:organicplantmaterial
   skos:definition "missing"@en ;
   skos:inScheme ocmat:oc_materialsvocab ;
   skos:prefLabel "organic plant material"@en ;
+.
+ocmat:plantmaterial
+  rdf:type skos:Concept ;
+  rdfs:label "plant material"@en ;
+  skos:broader mat:organicmaterial ;
+  skos:definition "Legacy OpenContext term kept for data compatibility; use ocmat:organicplantmaterial for new records."@en ;
+  skos:exactMatch ocmat:organicplantmaterial ;
+  skos:inScheme ocmat:oc_materialsvocab ;
+  skos:note "Deprecated compatibility alias for existing OpenContext records."@en ;
+  skos:prefLabel "plant material"@en ;
 .
 ocmat:paper
   rdf:type skos:Concept ;
